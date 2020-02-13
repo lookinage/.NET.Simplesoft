@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simplesoft.Sets</name>
+    </assembly>
+    <members>
+        <member name="T:Simplesoft.Sets.Distributor`1">
+            <summary>
+            Represents a distributor of elements of a set.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+        </member>
+        <member name="P:Simplesoft.Sets.Distributor`1.Instance">
+            <summary>
+            The default <see cref="T:Simplesoft.Sets.Distributor`1"/> of the set (only for reference types and unmanaged value types).
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Sets.Distributor`1.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Sets.Distributor`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Sets.Distributor`1.GetClusterIndex(`0)">
+            <summary>
+            Gets an index of a cluster of an element of the set.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>An index of a cluster of <paramref name="element"/>.</returns>
+        </member>
+    </members>
+</doc>
