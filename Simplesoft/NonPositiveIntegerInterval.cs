@@ -46,7 +46,7 @@ namespace Simplesoft
 		static public class MinusOperatorExceptions
 		{
 			/// <summary>
-			/// Represents the exception that is thrown when the left bound of the interval argument value equals to <see cref="long.MinValue"/>.
+			/// Represents the exception that is thrown when the left bound of the interval argument value equals to <see cref="Int64.MinValue"/>.
 			/// </summary>
 			public sealed class MinInvalidException : Exception
 			{
@@ -63,13 +63,25 @@ namespace Simplesoft
 		{
 			if (value.Max > 0x0)
 				throw new ImplicitOperatorExceptions.MaxInvalidException();
-			return new NonPositiveIntegerInterval { _min = value.Min, _max = value.Max };
+			return new NonPositiveIntegerInterval
+			{
+				_min = value.Min,
+				_max = value.Max
+			};
 		}
 		/// <summary>
 		/// Converts a <see cref="NonPositiveIntegerInterval"/> to an <see cref="IntegerInterval"/>.
 		/// </summary>
 		/// <param name="value">The <see cref="NonPositiveIntegerInterval"/>.</param>
-		static public implicit operator IntegerInterval(NonPositiveIntegerInterval value) => new IntegerInterval { _min = value.Min, _max = value.Max };
+		static public implicit operator IntegerInterval(NonPositiveIntegerInterval value)
+		{
+			return new IntegerInterval
+			{
+				_min = value.Min,
+				_max = value.Max
+			};
+		}
+
 		/// <summary>
 		/// Inverts a <see cref="NonPositiveIntegerInterval"/>.
 		/// </summary>
@@ -78,13 +90,17 @@ namespace Simplesoft
 		/// <exception cref="MinusOperatorExceptions.MinInvalidException"/>
 		static public NonNegativeIntegerInterval operator -(NonPositiveIntegerInterval value)
 		{
-			if (value._min == long.MinValue)
+			if (value._min == Int64.MinValue)
 				throw new MinusOperatorExceptions.MinInvalidException();
-			return new NonNegativeIntegerInterval { _min = -value.Max, _max = -value.Min };
+			return new NonNegativeIntegerInterval
+			{
+				_min = -value.Max,
+				_max = -value.Min
+			};
 		}
 
-		internal long _min;
-		internal long _max;
+		internal Int64 _min;
+		internal Int64 _max;
 
 		/// <summary>
 		/// Initializes the <see cref="NonPositiveIntegerInterval"/>
@@ -93,7 +109,7 @@ namespace Simplesoft
 		/// <param name="max">The right bound of the <see cref="NonPositiveIntegerInterval"/>.</param>
 		/// <exception cref="ConstructorExceptions.MaxInvalidException"/>
 		/// <exception cref="ConstructorExceptions.MinMaxInvalidException"/>
-		public NonPositiveIntegerInterval(long min, long max)
+		public NonPositiveIntegerInterval(Int64 min, Int64 max)
 		{
 			if (max > 0x0)
 				throw new ConstructorExceptions.MaxInvalidException();
@@ -106,10 +122,10 @@ namespace Simplesoft
 		/// <summary>
 		/// Gets the left bound of the <see cref="NonPositiveIntegerInterval"/>.
 		/// </summary>
-		public long Min => _min;
+		public Int64 Min => _min;
 		/// <summary>
 		/// Gets the right bound of the <see cref="NonPositiveIntegerInterval"/>.
 		/// </summary>
-		public long Max => _max;
+		public Int64 Max => _max;
 	}
 }

@@ -24,7 +24,7 @@ namespace Simplesoft
 		/// <summary>
 		/// The maximum array length.
 		/// </summary>
-		public const long MaxArrayLength = 0x7FEFFFFF;
+		public const Int64 MaxArrayLength = 0x7FEFFFFF;
 
 		/// <summary>
 		/// Initializes an <see cref="Array"/> by a desired length if the <see cref="Array"/> is <see langword="null"/>; otherwise, doubles the length of the <see cref="Array"/> while the length is less than the desired length.
@@ -32,10 +32,14 @@ namespace Simplesoft
 		/// <param name="array">The <see cref="Array"/> which length is to be ensured.</param>
 		/// <param name="desiredLength">The desired length of the <see cref="Array"/>.</param>
 		/// <exception cref="EnsureLengthExceptions.DesiredLengthInvalidException"/>
-		static public bool EnsureLength<T>(ref T[] array, NonNegativeInteger desiredLength)
+		static public Boolean EnsureLength<T>
+		(
+			ref T[] array,
+			NonNegativeInteger desiredLength
+		)
 		{
-			long currentLength;
-			long newLength;
+			Int64 currentLength;
+			Int64 newLength;
 			T[] newArray;
 
 			if (desiredLength > MaxArrayLength)
@@ -59,7 +63,12 @@ namespace Simplesoft
 			}
 			while (newLength < desiredLength);
 			newArray = new T[newLength];
-			Array.Copy(array, newArray, currentLength);
+			Array.Copy
+			(
+				array, 
+				newArray, 
+				currentLength
+			);
 			array = newArray;
 			return true;
 		}

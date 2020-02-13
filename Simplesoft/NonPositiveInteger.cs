@@ -22,21 +22,21 @@ namespace Simplesoft
 		}
 
 		/// <summary>
-		/// Converts an <see cref="long"/> to a <see cref="NonPositiveInteger"/>.
+		/// Converts an <see cref="Int64"/> to a <see cref="NonPositiveInteger"/>.
 		/// </summary>
-		/// <param name="value">The <see cref="long"/>.</param>
+		/// <param name="value">The <see cref="Int64"/>.</param>
 		/// <exception cref="ImplicitOperatorExceptions.ValueInvalidException"/>
-		static public implicit operator NonPositiveInteger(long value)
+		static public implicit operator NonPositiveInteger(Int64 value)
 		{
 			if (value > 0x0)
 				throw new ImplicitOperatorExceptions.ValueInvalidException();
 			return new NonPositiveInteger { _value = value };
 		}
 		/// <summary>
-		/// Converts a <see cref="NonPositiveInteger"/> to an <see cref="long"/>.
+		/// Converts a <see cref="NonPositiveInteger"/> to an <see cref="Int64"/>.
 		/// </summary>
 		/// <param name="value">The <see cref="NonPositiveInteger"/>.</param>
-		static public implicit operator long(NonPositiveInteger value) => value._value;
+		static public implicit operator Int64(NonPositiveInteger value) => value._value;
 		/// <summary>
 		/// Inverts a <see cref="NonPositiveInteger"/>.
 		/// </summary>
@@ -44,6 +44,6 @@ namespace Simplesoft
 		/// <returns>An additive inverse of <paramref name="value"/>.</returns>
 		static public NonNegativeInteger operator -(NonPositiveInteger value) => new NonNegativeInteger { _value = -value._value };
 
-		internal long _value;
+		internal Int64 _value;
 	}
 }

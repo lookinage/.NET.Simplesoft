@@ -13,7 +13,11 @@ namespace Simplesoft
 			AssemblyBuilder assemblyBuilder;
 
 			assemblyName = new AssemblyName(nameof(Simplesoft) + "." + nameof(Dynamic));
-			assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+			assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly
+			(
+				assemblyName,
+				AssemblyBuilderAccess.Run
+			);
 			_moduleBuilder = assemblyBuilder.DefineDynamicModule(assemblyBuilder.FullName);
 		}
 	}

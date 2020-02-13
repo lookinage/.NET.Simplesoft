@@ -21,8 +21,8 @@ namespace Simplesoft
 			}
 		}
 
-		internal long _min;
-		internal long _max;
+		internal Int64 _min;
+		internal Int64 _max;
 
 		/// <summary>
 		/// Initializes the <see cref="IntegerInterval"/>
@@ -30,7 +30,11 @@ namespace Simplesoft
 		/// <param name="min">The left bound of the <see cref="IntegerInterval"/>.</param>
 		/// <param name="max">The right bound of the <see cref="IntegerInterval"/>.</param>
 		/// <exception cref="ConstructorExceptions.MinMaxInvalidException"/>
-		public IntegerInterval(long min, long max)
+		public IntegerInterval
+		(
+			Int64 min,
+			Int64 max
+		)
 		{
 			if (max < min)
 				throw new ConstructorExceptions.MinMaxInvalidException();
@@ -41,10 +45,10 @@ namespace Simplesoft
 		/// <summary>
 		/// Gets the left bound of the <see cref="IntegerInterval"/>.
 		/// </summary>
-		public long Min => _min;
+		public Int64 Min => _min;
 		/// <summary>
 		/// Gets the right bound of the <see cref="IntegerInterval"/>.
 		/// </summary>
-		public long Max => _max;
+		public Int64 Max => _max;
 	}
 }
