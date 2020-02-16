@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -36,7 +37,7 @@ namespace Simplesoft.Sets.Tests
 			ILGenerator generator;
 			MethodBuilder methodBuilder;
 
-			static bool isManagedType(Type type)
+			static Boolean isManagedType(Type type)
 			{
 				FieldInfo[] fields;
 
@@ -62,14 +63,14 @@ namespace Simplesoft.Sets.Tests
 			generator.Emit(OpCodes.Ldarg_0);
 			generator.Emit(OpCodes.Call, distributorType.GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, Type.EmptyTypes, null));
 			generator.Emit(OpCodes.Ret);
-			methodBuilder = typeBuilder.DefineMethod(nameof(GetClusterIndex), MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final, CallingConventions.Standard, typeof(long), new Type[] { type });
+			methodBuilder = typeBuilder.DefineMethod(nameof(GetClusterIndex), MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final, CallingConventions.Standard, typeof(Int64), new Type[] { type });
 			generator = methodBuilder.GetILGenerator();
 			if (type.IsValueType)
 			{
 				LocalBuilder pointerLocalBuilder;
-				int size;
-				int offset;
-				bool accumulating;
+				Int32 size;
+				Int32 offset;
+				Boolean accumulating;
 
 				pointerLocalBuilder = generator.DeclareLocal(pointerType);
 				generator.Emit(OpCodes.Ldarga, 0x1);
@@ -78,7 +79,7 @@ namespace Simplesoft.Sets.Tests
 				size = Unsafe.SizeOf<T>();
 				offset = 0x0;
 				accumulating = false;
-				for (; size - offset >= sizeof(ulong); offset += sizeof(ulong))
+				for (; size - offset >= sizeof(UInt64); offset += sizeof(UInt64))
 				{
 					generator.Emit(OpCodes.Ldloc, pointerLocalBuilder.LocalIndex);
 					generator.Emit(OpCodes.Ldc_I4, offset);
@@ -89,7 +90,7 @@ namespace Simplesoft.Sets.Tests
 					else
 						accumulating = true;
 				}
-				if (size - offset >= sizeof(uint))
+				if (size - offset >= sizeof(UInt32))
 				{
 					generator.Emit(OpCodes.Ldloc, pointerLocalBuilder.LocalIndex);
 					generator.Emit(OpCodes.Ldc_I4, offset);
@@ -108,9 +109,9 @@ namespace Simplesoft.Sets.Tests
 					generator.Emit(OpCodes.Ldc_I4, 0x20);
 					generator.Emit(OpCodes.Shl);
 					generator.Emit(OpCodes.Xor);
-					offset += sizeof(uint);
+					offset += sizeof(UInt32);
 				}
-				if (size - offset >= sizeof(ushort))
+				if (size - offset >= sizeof(UInt16))
 				{
 					generator.Emit(OpCodes.Ldloc, pointerLocalBuilder.LocalIndex);
 					generator.Emit(OpCodes.Ldc_I4, offset);
@@ -145,9 +146,9 @@ namespace Simplesoft.Sets.Tests
 					generator.Emit(OpCodes.Ldc_I4, 0x30);
 					generator.Emit(OpCodes.Shl);
 					generator.Emit(OpCodes.Xor);
-					offset += sizeof(ushort);
+					offset += sizeof(UInt16);
 				}
-				if (size - offset >= sizeof(byte))
+				if (size - offset >= sizeof(Byte))
 				{
 					generator.Emit(OpCodes.Ldloc, pointerLocalBuilder.LocalIndex);
 					generator.Emit(OpCodes.Ldc_I4, offset);
@@ -225,7 +226,7 @@ namespace Simplesoft.Sets.Tests
 				generator.Emit(OpCodes.Ceq);
 				generator.Emit(OpCodes.Brtrue, emitNullHashCode);
 				generator.Emit(OpCodes.Ldarg_1);
-				objectType = typeof(object);
+				objectType = typeof(Object);
 				generator.Emit(OpCodes.Call, objectType.GetMethod(nameof(GetHashCode)));
 				generator.Emit(OpCodes.Conv_I8);
 				generator.Emit(OpCodes.Dup);
@@ -256,29 +257,29 @@ namespace Simplesoft.Sets.Tests
 		/// </summary>
 		/// <param name="element">The element.</param>
 		/// <returns>An index of a cluster of <paramref name="element"/>.</returns>
-		public abstract long GetClusterIndex(T element);
+		public abstract Int64 GetClusterIndex(T element);
 	}
 	[TestClass]
 	public class DistributorTester
 	{
 		public struct MyStruct
 		{
-			public ulong A;
-			public ulong B;
-			public ulong C;
-			public byte D;
+			public UInt64 A;
+			public UInt64 B;
+			public UInt64 C;
+			public Byte D;
 		}
 
 		[TestMethod]
 		public unsafe void TestMethod1()
 		{
-			int size = sizeof(MyStruct);
-			int size2 = Marshal.SizeOf<MyStruct>();
+			Int32 size = sizeof(MyStruct);
+			Int32 size2 = Marshal.SizeOf<MyStruct>();
 			Distributor<MyStruct> distributor = Distributor<MyStruct>.Instance;
-			MyStruct obj = new MyStruct() {  D = 0xFF };
-			long clusterIndex = distributor.GetClusterIndex(obj);
-			int hashCode = (int)clusterIndex;
-			int hashCode2 = obj.GetHashCode();
+			MyStruct obj = new MyStruct() { D = 0xFF };
+			Int64 clusterIndex = distributor.GetClusterIndex(obj);
+			Int32 hashCode = (Int32)clusterIndex;
+			Int32 hashCode2 = obj.GetHashCode();
 		}
 	}
 }

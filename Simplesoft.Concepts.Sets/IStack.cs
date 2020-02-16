@@ -24,7 +24,7 @@ namespace Simplesoft.Concepts.Sets
 		/// <summary>
 		/// Represents an editor of an <see cref="IStack{T}"/>.
 		/// </summary>
-		public interface IEditor : IOrder<T>.IEditor
+		public new interface IEditor : IOrder<T>.IEditor
 		{
 			/// <summary>
 			/// Provides exceptions for <see cref="Add(T)"/> method.
@@ -48,7 +48,7 @@ namespace Simplesoft.Concepts.Sets
 			/// </summary>
 			/// <param name="element">The element if the <see cref="IStack{T}"/> is not empty; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="IStack{T}"/>; otherwise, <see langword="false"/>.</returns>
-			bool Remove(out T element);
+			Boolean Remove(out T element);
 			/// <summary>
 			/// Adds an element at the end of the <see cref="IStack{T}"/> and causes the <see cref="AddEvent"/> on the <see cref="IStack{T}"/>.
 			/// </summary>

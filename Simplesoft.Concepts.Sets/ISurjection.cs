@@ -16,15 +16,15 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association that is added to the <see cref="ISurjection{TInput, TOutput}"/>.</param>
 		/// <param name="output">The output of the association that is added to the <see cref="ISurjection{TInput, TOutput}"/>.</param>
 		/// <param name="address">The address of the association in the <see cref="ISurjection{TInput, TOutput}"/>.</param>
-		public delegate void AddEventResponder(ISurjection<TInput, TOutput> surjection, TInput input, TOutput output, long address);
+		public delegate void AddEventResponder(ISurjection<TInput, TOutput> surjection, TInput input, TOutput output, Int64 address);
 
 		/// <summary>
 		/// Represents an editor of an <see cref="ISurjection{TInput, TOutput}"/>.
 		/// </summary>
-		public interface IEditor : IFunction<TInput, TOutput>.IEditor
+		public new interface IEditor : IFunction<TInput, TOutput>.IEditor
 		{
 			/// <summary>
-			/// Provides exceptions for <see cref="TryAdd(TInput, TOutput, out long)"/> method.
+			/// Provides exceptions for <see cref="TryAdd(TInput, TOutput, out Int64)"/> method.
 			/// </summary>
 			static public class TryAddMethodExceptions
 			{
@@ -48,7 +48,7 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="address">The address of the association in the <see cref="ISurjection{TInput, TOutput}"/> if the association is added; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the association is added to the <see cref="ISurjection{TInput, TOutput}"/>; otherwise, <see langword="false"/>.</returns>
 			/// <exception cref="TryAddMethodExceptions.OverflowedException"/>
-			bool TryAdd(TInput input, TOutput output, out long address);
+			Boolean TryAdd(TInput input, TOutput output, out Int64 address);
 		}
 
 		/// <summary>

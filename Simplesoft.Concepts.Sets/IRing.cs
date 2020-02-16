@@ -36,7 +36,7 @@ namespace Simplesoft.Concepts.Sets
 		/// <summary>
 		/// Represents an editor of an <see cref="IRing{T}"/>.
 		/// </summary>
-		public interface IEditor : IOrder<T>.IEditor
+		public new interface IEditor : IOrder<T>.IEditor
 		{
 			/// <summary>
 			/// Provides exceptions for <see cref="AddFront(T)"/> method.
@@ -76,13 +76,13 @@ namespace Simplesoft.Concepts.Sets
 			/// </summary>
 			/// <param name="element">The element if the <see cref="IRing{T}"/> is not empty; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="IRing{T}"/>; otherwise, <see langword="false"/>.</returns>
-			bool RemoveBack(out T element);
+			Boolean RemoveBack(out T element);
 			/// <summary>
 			/// Removes an element from the beginning of the <see cref="IRing{T}"/>, causes the <see cref="RemoveFrontEvent"/> on the <see cref="IRing{T}"/> if the <see cref="IRing{T}"/> is not empty.
 			/// </summary>
 			/// <param name="element">The element if the <see cref="IRing{T}"/> is not empty; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="IRing{T}"/>; otherwise, <see langword="false"/>.</returns>
-			bool RemoveFront(out T element);
+			Boolean RemoveFront(out T element);
 			/// <summary>
 			/// Adds an element at the end of the <see cref="IRing{T}"/> and causes the <see cref="AddBackEvent"/> on the <see cref="IRing{T}"/>.
 			/// </summary>

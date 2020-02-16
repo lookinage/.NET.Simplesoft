@@ -11,11 +11,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Development\Projects\Simplesoft.Concepts.Sets\Simplesoft.Concepts.Sets.xml</DocumentationFile>
+    <DocumentationFile>Simplesoft.Concepts.Sets.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Development\Projects\Simplesoft.Concepts.Sets\Simplesoft.Concepts.Sets.xml</DocumentationFile>
+    <DocumentationFile>Simplesoft.Concepts.Sets.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

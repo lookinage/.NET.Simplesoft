@@ -1,4 +1,6 @@
-﻿namespace Simplesoft.Concepts.Sets
+﻿using System;
+
+namespace Simplesoft.Concepts.Sets
 {
 	/// <summary>
 	/// Represents a sequence of elements.
@@ -9,11 +11,11 @@
 		/// <summary>
 		/// Gets the number of elements of the <see cref="ISequence{T}"/>.
 		/// </summary>
-		long Count
+		Int64 Count
 		{
 			get
 			{
-				int count = 0x0;
+				Int32 count = 0x0;
 				foreach (T element in this)
 					count++;
 				return count;

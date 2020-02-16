@@ -46,6 +46,6 @@ namespace Simplesoft.Concepts.Sets
 		/// Sets the next element of the enumeration as current.
 		/// </summary>
 		/// <returns><see langword="true"/> whether the <see cref="IEnumerator{T}"/> is not exhausted yet and the next element is set; otherwise, <see langword="false"/>.</returns>
-		bool MoveNext();
+		Boolean MoveNext();
 	}
 }

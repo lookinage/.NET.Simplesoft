@@ -1,7 +1,7 @@
 ﻿using Simplesoft.Concepts.Sets;
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Simplesoft.Sets
 {
@@ -13,8 +13,8 @@ namespace Simplesoft.Sets
 	{
 		private struct Slot
 		{
-			internal int _nextSlotIndex;
-			internal int _hashCode;
+			internal Int32 _nextSlotIndex;
+			internal Int32 _hashCode;
 			internal T _element;
 		}
 		/// <summary>
@@ -23,10 +23,10 @@ namespace Simplesoft.Sets
 		public struct Enumerator : IEnumerator<T>
 		{
 			private readonly Slot[] _storage;
-			private readonly int _usedSlotCount;
-			private int _slotIndex;
+			private readonly Int32 _usedSlotCount;
+			private Int32 _slotIndex;
 			private T _current;
-			private bool _disposed;
+			private Boolean _disposed;
 
 			internal Enumerator(RandomAccessSubset<T> instance)
 			{
@@ -66,11 +66,11 @@ namespace Simplesoft.Sets
 			/// Sets the next element of the <see cref="RandomAccessSubset{T}"/> as current.
 			/// </summary>
 			/// <returns><see langword="true"/> whether the next element is set as current; otherwise, <see langword="false"/>.</returns>
-			public bool MoveNext()
+			public Boolean MoveNext()
 			{
 				if (_slotIndex == -0x2)
 					return false;
-				int nextSlotIndex;
+				Int32 nextSlotIndex;
 				for (nextSlotIndex = _slotIndex + 0x1; nextSlotIndex != _usedSlotCount && _storage[nextSlotIndex]._hashCode == -0x1; nextSlotIndex++) ;
 				if (nextSlotIndex != _usedSlotCount)
 				{
@@ -101,7 +101,7 @@ namespace Simplesoft.Sets
 			/// <param name="address">The address of the element in the <see cref="RandomAccessSubset{T}"/>.</param>
 			/// <returns><see langword="true"/> whether <paramref name="element"/> is added to the <see cref="RandomAccessSubset{T}"/>; otherwise, <see langword="false"/>.</returns>
 			/// <exception cref="InvalidOperationException">The <see cref="RandomAccessSubset{T}"/> would be overflowed.</exception>
-			public bool TryAdd(T element, out int address) => _instance.TryAdd(element, out address);
+			public Boolean TryAdd(T element, out Int32 address) => _instance.TryAdd(element, out address);
 			/// <summary>
 			/// Adds an element to the <see cref="RandomAccessSubset{T}"/>.
 			/// </summary>
@@ -109,13 +109,13 @@ namespace Simplesoft.Sets
 			/// <returns>The address of the element in the <see cref="RandomAccessSubset{T}"/>.</returns>
 			/// <exception cref="InvalidOperationException">The <see cref="RandomAccessSubset{T}"/> would be overflowed.</exception>
 			/// <exception cref="ArgumentException">The <see cref="RandomAccessSubset{T}"/> already contains the element.</exception>
-			public int Add(T element) => _instance.Add(element);
+			public Int32 Add(T element) => _instance.Add(element);
 			/// <summary>
 			/// Removes an element from the <see cref="RandomAccessSubset{T}"/> if the <see cref="RandomAccessSubset{T}"/> contains the element.
 			/// </summary>
 			/// <param name="element">The element.</param>
 			/// <returns><see langword="true"/> whether <paramref name="element"/> is removed from the <see cref="RandomAccessSubset{T}"/>; otherwise, <see langword="false"/>.</returns>
-			public bool TryRemove(T element) => _instance.TryRemove(element);
+			public Boolean TryRemove(T element) => _instance.TryRemove(element);
 			/// <summary>
 			/// Removes an element from the <see cref="RandomAccessSubset{T}"/>.
 			/// </summary>
@@ -128,41 +128,41 @@ namespace Simplesoft.Sets
 			/// <param name="address">The address.</param>
 			/// <param name="element">The element if the <see cref="RandomAccessSubset{T}"/> contains; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="RandomAccessSubset{T}"/>; otherwise, <see langword="false"/>.</returns>
-			public bool TryRemoveAt(int address, out T element) => _instance.TryRemoveAt(address, out element);
+			public Boolean TryRemoveAt(Int32 address, out T element) => _instance.TryRemoveAt(address, out element);
 			/// <summary>
 			/// Removes an element at an address from the <see cref="RandomAccessSubset{T}"/> if the <see cref="RandomAccessSubset{T}"/> contains the element.
 			/// </summary>
 			/// <param name="address">The address.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="RandomAccessSubset{T}"/>; otherwise, <see langword="false"/>.</returns>
-			public bool TryRemoveAt(int address) => _instance.TryRemoveAt(address, out _);
+			public Boolean TryRemoveAt(Int32 address) => _instance.TryRemoveAt(address, out _);
 			/// <summary>
 			/// Removes an element at an address from the <see cref="RandomAccessSubset{T}"/>.
 			/// </summary>
 			/// <param name="address">The address.</param>
 			/// <returns>The element.</returns>
 			/// <exception cref="ArgumentException">The <see cref="RandomAccessSubset{T}"/> does not contain the element.</exception>
-			public T RemoveAt(int address) => _instance.RemoveAt(address);
+			public T RemoveAt(Int32 address) => _instance.RemoveAt(address);
 		}
 
-		private const int _defaultCapacity = 0x4;
+		private const Int32 _defaultCapacity = 0x4;
 
 		private Slot[] _slots;
-		private int[] _bucketStartIndices;
-		private int _freeSlotIndex;
-		private int _usedSlotCount;
-		private int _count;
+		private Int32[] _bucketStartIndices;
+		private Int32 _freeSlotIndex;
+		private Int32 _usedSlotCount;
+		private Int32 _count;
 
 		/// <summary>
 		/// Initializes the <see cref="RandomAccessSubset{T}"/>.
 		/// </summary>
 		/// <param name="capacity">The minimum number of elements of the <see cref="RandomAccessSubset{T}"/>.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less than 0.</exception>
-		public RandomAccessSubset(int capacity)
+		public RandomAccessSubset(Int32 capacity)
 		{
 			if (capacity < 0x0)
 				throw new ArgumentOutOfRangeException(nameof(capacity));
 			_slots = new Slot[capacity];
-			_bucketStartIndices = new int[capacity];
+			_bucketStartIndices = new Int32[capacity];
 			_freeSlotIndex = -0x1;
 		}
 		/// <summary>
@@ -173,13 +173,13 @@ namespace Simplesoft.Sets
 		/// <summary>
 		/// Gets the number of elements of the <see cref="RandomAccessSubset{T}"/>.
 		/// </summary>
-		public int Count => _count;
+		public Int32 Count => _count;
 		/// <summary>
 		/// Gets an element at an address in the <see cref="RandomAccessSubset{T}"/>.
 		/// </summary>
 		/// <param name="address">The address.</param>
 		/// <exception cref="ArgumentException">The <see cref="RandomAccessSubset{T}"/> does not contain the element.</exception>
-		public T this[int address]
+		public T this[Int32 address]
 		{
 			get
 			{
@@ -204,28 +204,28 @@ namespace Simplesoft.Sets
 
 		private void Clear()
 		{
-			int capacity;
+			Int32 capacity;
 			Array.Clear(_slots, 0x0, capacity = _slots.Length);
 			Array.Clear(_bucketStartIndices, 0x0, capacity);
 			_freeSlotIndex = -0x1;
 			_usedSlotCount = 0x0;
 			_count = 0x0;
 		}
-		private bool TryAdd(T element, out int address)
+		private Boolean TryAdd(T element, out Int32 address)
 		{
-			void increaseCapacity(int capacity)
+			void increaseCapacity(Int32 capacity)
 			{
-				int previousCapacity;
+				Int32 previousCapacity;
 				Slot[] newSlots;
-				if ((previousCapacity = capacity) == int.MaxValue)
+				if ((previousCapacity = capacity) == Int32.MaxValue)
 					throw new ISubset<T>.IEditor.TryAddMethodExceptions.OverflowedException();
 				if ((capacity <<= 0x1) < 0x0)
-					capacity = int.MaxValue;
+					capacity = Int32.MaxValue;
 				Array.Copy(_slots, newSlots = new Slot[capacity], previousCapacity);
-				int[] newBuckets = new int[capacity];
-				for (int slotIndex = 0x0; slotIndex != previousCapacity; slotIndex++)
+				Int32[] newBuckets = new Int32[capacity];
+				for (Int32 slotIndex = 0x0; slotIndex != previousCapacity; slotIndex++)
 				{
-					int bucket = _slots[slotIndex]._hashCode % capacity;
+					Int32 bucket = _slots[slotIndex]._hashCode % capacity;
 					newSlots[slotIndex]._nextSlotIndex = newBuckets[bucket] - 0x1;
 					newBuckets[bucket] = slotIndex + 0x1;
 				}
@@ -233,17 +233,17 @@ namespace Simplesoft.Sets
 				_bucketStartIndices = newBuckets;
 			}
 			Slot[] slots;
-			int count;
-			int capacity;
+			Int32 count;
+			Int32 capacity;
 			if ((count = _count) == (capacity = (slots = _slots).Length))
 			{
 				increaseCapacity(capacity);
 				capacity = (slots = _slots).Length;
 			}
-			int hashCode;
-			int bucket = (hashCode = element.get) % capacity;
-			int[] buckets;
-			int slotIndex;
+			Int32 hashCode;
+			Int32 bucket = (hashCode = element.get) % capacity;
+			Int32[] buckets;
+			Int32 slotIndex;
 			for (slotIndex = (buckets = _bucketStartIndices)[bucket] - 0x1; slotIndex != -0x1; slotIndex = slots[slotIndex]._nextSlotIndex)
 			{
 				if (element == null ? slots[slotIndex]._element != null : !element.Compare(slots[slotIndex]._element))
@@ -251,7 +251,7 @@ namespace Simplesoft.Sets
 				address = slotIndex;
 				return false;
 			}
-			int freeIndex;
+			Int32 freeIndex;
 			if ((freeIndex = _freeSlotIndex) != -0x1)
 				_freeSlotIndex = _slots[slotIndex = freeIndex]._nextSlotIndex;
 			else
@@ -264,19 +264,19 @@ namespace Simplesoft.Sets
 			address = slotIndex;
 			return true;
 		}
-		private int Add(T element)
+		private Int32 Add(T element)
 		{
-			if (!TryAdd(element, out int address))
+			if (!TryAdd(element, out Int32 address))
 				throw new ArgumentException(SubsetHelper.GetSubsetAlreadyContainsElementExceptionMessage(this, nameof(element)));
 			return address;
 		}
-		private bool TryRemove(T element)
+		private Boolean TryRemove(T element)
 		{
-			int[] buckets;
-			int bucket = element.RelatedElement % (buckets = _bucketStartIndices).Length;
+			Int32[] buckets;
+			Int32 bucket = element.RelatedElement % (buckets = _bucketStartIndices).Length;
 			Slot[] slots = _slots;
-			int last = -0x1;
-			for (int slotIndex = buckets[bucket] - 0x1; slotIndex != -0x1; last = slotIndex, slotIndex = slots[slotIndex]._nextSlotIndex)
+			Int32 last = -0x1;
+			for (Int32 slotIndex = buckets[bucket] - 0x1; slotIndex != -0x1; last = slotIndex, slotIndex = slots[slotIndex]._nextSlotIndex)
 			{
 				if (element == null ? slots[slotIndex]._element != null : !element.Compare(slots[slotIndex]._element))
 					continue;
@@ -298,20 +298,20 @@ namespace Simplesoft.Sets
 			if (!TryRemove(element))
 				throw new ArgumentException(SubsetHelper.GetSubsetDoesNotContainElementExceptionMessage(this, nameof(element)));
 		}
-		private bool TryRemoveAt(int address, out T element)
+		private Boolean TryRemoveAt(Int32 address, out T element)
 		{
 			Slot[] slots;
-			int relatedElement;
+			Int32 relatedElement;
 			if (address < 0x0 || address >= _usedSlotCount || (relatedElement = (slots = _slots)[address]._hashCode) == -0x1)
 			{
 				element = default;
 				return false;
 			}
 			T elementBuffer = slots[address]._element;
-			int[] buckets;
-			int bucket = relatedElement % (buckets = _bucketStartIndices).Length;
-			int last = -0x1;
-			for (int slotIndex = buckets[bucket] - 0x1; ; last = slotIndex, slotIndex = slots[slotIndex]._nextSlotIndex)
+			Int32[] buckets;
+			Int32 bucket = relatedElement % (buckets = _bucketStartIndices).Length;
+			Int32 last = -0x1;
+			for (Int32 slotIndex = buckets[bucket] - 0x1; ; last = slotIndex, slotIndex = slots[slotIndex]._nextSlotIndex)
 			{
 				if (elementBuffer == null ? slots[slotIndex]._element != null : !elementBuffer.Compare(slots[slotIndex]._element))
 					continue;
@@ -328,7 +328,7 @@ namespace Simplesoft.Sets
 				return true;
 			}
 		}
-		private T RemoveAt(int address)
+		private T RemoveAt(Int32 address)
 		{
 			if (!TryRemoveAt(address, out T element))
 				throw new ArgumentException(SubsetHelper.GetSubsetDoesNotContainElementExceptionMessage(this));
@@ -349,8 +349,8 @@ namespace Simplesoft.Sets
 			if (handler == null)
 				throw new ArgumentNullException(nameof(handler));
 			Slot[] slots = _slots;
-			int usedSlotCount = _usedSlotCount;
-			for (int slotIndex = 0x0; slotIndex != usedSlotCount; slotIndex++)
+			Int32 usedSlotCount = _usedSlotCount;
+			for (Int32 slotIndex = 0x0; slotIndex != usedSlotCount; slotIndex++)
 				if (slots[slotIndex]._hashCode != -0x1 && handler(slots[slotIndex]._element))
 					return;
 		}
@@ -359,18 +359,18 @@ namespace Simplesoft.Sets
 		/// </summary>
 		/// <param name="element">The element.</param>
 		/// <returns><see langword="true"/> whether the <see cref="RandomAccessSubset{T}"/> contains <paramref name="element"/>; otherwise, <see langword="false"/>.</returns>
-		public bool Contains(T element) => TryGetAddress(element, out _);
+		public Boolean Contains(T element) => TryGetAddress(element, out _);
 		/// <summary>
 		/// Determines whether the <see cref="RandomAccessSubset{T}"/> contains an element.
 		/// </summary>
 		/// <param name="element">The element.</param>
 		/// <param name="address">The address of <paramref name="element"/> if the <see cref="RandomAccessSubset{T}"/> contains <paramref name="element"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="RandomAccessSubset{T}"/> contains <paramref name="element"/>; otherwise, <see langword="false"/>.</returns>
-		public bool TryGetAddress(T element, out int address)
+		public Boolean TryGetAddress(T element, out Int32 address)
 		{
-			int relatedElement = element.RelatedElement;
+			Int32 relatedElement = element.RelatedElement;
 			Slot[] slots = _slots;
-			for (int slotIndex = _bucketStartIndices[relatedElement % slots.Length] - 0x1; slotIndex != -0x1; slotIndex = slots[slotIndex]._nextSlotIndex)
+			for (Int32 slotIndex = _bucketStartIndices[relatedElement % slots.Length] - 0x1; slotIndex != -0x1; slotIndex = slots[slotIndex]._nextSlotIndex)
 			{
 				if (element == null ? slots[slotIndex]._element != null : !element.Compare(slots[slotIndex]._element))
 					continue;
@@ -386,9 +386,9 @@ namespace Simplesoft.Sets
 		/// <param name="element">The element.</param>
 		/// <returns>The address of the element.</returns>
 		/// <exception cref="ArgumentException">The <see cref="RandomAccessSubset{T}"/> does not contain <paramref name="element"/>.</exception>
-		public int GetAddress(T element)
+		public Int32 GetAddress(T element)
 		{
-			if (!TryGetAddress(element, out int address))
+			if (!TryGetAddress(element, out Int32 address))
 				throw new ArgumentException(SubsetHelper.GetSubsetDoesNotContainElementExceptionMessage(this, nameof(element)));
 			return address;
 		}
@@ -397,14 +397,14 @@ namespace Simplesoft.Sets
 		/// </summary>
 		/// <param name="address">The address.</param>
 		/// <returns><see langword="true"/> whether the <see cref="RandomAccessSubset{T}"/> contains the element; otherwise, <see langword="false"/>.</returns>
-		public bool ContainsAt(int address) => address >= 0x0 && address < _usedSlotCount && _slots[address]._hashCode != -0x1;
+		public Boolean ContainsAt(Int32 address) => address >= 0x0 && address < _usedSlotCount && _slots[address]._hashCode != -0x1;
 		/// <summary>
 		/// Determines whether the <see cref="RandomAccessSubset{T}"/> contains an element at an address.
 		/// </summary>
 		/// <param name="address">The address.</param>
 		/// <param name="element">The element if the <see cref="RandomAccessSubset{T}"/> contains; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="RandomAccessSubset{T}"/> contains the element; otherwise, <see langword="false"/>.</returns>
-		public bool TryGetAt(int address, out T element)
+		public Boolean TryGetAt(Int32 address, out T element)
 		{
 			Slot[] slots;
 			if (address < 0x0 || address >= _usedSlotCount || (slots = _slots)[address]._hashCode == -0x1)

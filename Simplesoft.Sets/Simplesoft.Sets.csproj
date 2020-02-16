@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Development\Projects\Simplesoft.Sets\Simplesoft.Sets.xml</DocumentationFile>
+    <DocumentationFile>Simplesoft.Sets.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
