@@ -3,7 +3,7 @@
 namespace Simplesoft.Concepts.Sets
 {
 	/// <summary>
-	/// Represents an <see cref="IFunction{TInput, TOutput}"/> where an output can be associated to a number of inputs.
+	/// Represents an <see cref="IFunction{TInput, TOutput}"/> where an output can be associated to an input.
 	/// </summary>
 	/// <typeparam name="TInput">The type of the inputs.</typeparam>
 	/// <typeparam name="TOutput">The type of the outputs.</typeparam>
