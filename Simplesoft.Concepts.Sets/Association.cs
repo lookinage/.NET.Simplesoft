@@ -15,7 +15,11 @@
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="output">The output.</param>
-		public Association(TInput input, TOutput output)
+		public Association
+		(
+			TInput input,
+			TOutput output
+		)
 		{
 			_input = input;
 			_output = output;

@@ -13,21 +13,35 @@ namespace Simplesoft.Concepts.Sets
 		/// </summary>
 		/// <param name="subset">The <see cref="ISubset{T}"/> the <see cref="ClearEvent"/> has happened to.</param>
 		/// <param name="count">The number of removed elements.</param>
-		public delegate void ClearEventResponder(ISubset<T> subset, Int64 count);
+		public delegate void ClearEventResponder
+		(
+			ISubset<T> subset, 
+			Int64 count
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="RemoveEvent"/>.
 		/// </summary>
 		/// <param name="subset">The <see cref="ISubset{T}"/> the <see cref="RemoveEvent"/> has happened to.</param>
 		/// <param name="element">The element that is removed from the <see cref="ISubset{T}"/>.</param>
 		/// <param name="address">The address of <paramref name="element"/> in the <see cref="ISubset{T}"/>.</param>
-		public delegate void RemoveEventResponder(ISubset<T> subset, T element, Int64 address);
+		public delegate void RemoveEventResponder
+		(
+			ISubset<T> subset, 
+			T element, 
+			Int64 address
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="AddEvent"/>.
 		/// </summary>
 		/// <param name="subset">The <see cref="ISubset{T}"/> the <see cref="AddEvent"/> has happened to.</param>
 		/// <param name="element">The element that is added to the <see cref="ISubset{T}"/>.</param>
 		/// <param name="address">The address of <paramref name="element"/> in the <see cref="ISubset{T}"/>.</param>
-		public delegate void AddEventResponder(ISubset<T> subset, T element, Int64 address);
+		public delegate void AddEventResponder
+		(
+			ISubset<T> subset, 
+			T element, 
+			Int64 address
+		);
 
 		/// <summary>
 		/// Represents an editor of an <see cref="ISubset{T}"/>.
@@ -61,14 +75,22 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="address">The address.</param>
 			/// <param name="element">The element if the <see cref="ISubset{T}"/> contains the element at <paramref name="address"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the element is removed from the <see cref="ISubset{T}"/>; otherwise, <see langword="false"/>.</returns>
-			Boolean TryRemoveAt(Int64 address, out T element);
+			Boolean TryRemoveAt
+			(
+				Int64 address, 
+				out T element
+			);
 			/// <summary>
 			/// Removes an element from the <see cref="ISubset{T}"/>, causes the <see cref="RemoveEvent"/> on the <see cref="ISubset{T}"/> if the <see cref="ISubset{T}"/> contains the element.
 			/// </summary>
 			/// <param name="element">The element.</param>
 			/// <param name="address">The address of <paramref name="element"/> in the <see cref="ISubset{T}"/> if <paramref name="element"/> is removed from the <see cref="ISubset{T}"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether <paramref name="element"/> is removed from the <see cref="ISubset{T}"/>; otherwise, <see langword="false"/>.</returns>
-			Boolean TryRemove(T element, out Int64 address);
+			Boolean TryRemove
+			(
+				T element, 
+				out Int64 address
+			);
 			/// <summary>
 			/// Adds an element to the <see cref="ISubset{T}"/>, causes the <see cref="AddEvent"/> on the <see cref="ISubset{T}"/> if the <see cref="ISubset{T}"/> does not contain the element.
 			/// </summary>
@@ -76,7 +98,11 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="address">The address of <paramref name="element"/> in the <see cref="ISubset{T}"/> if <paramref name="element"/> is added to the <see cref="ISubset{T}"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether <paramref name="element"/> is added to the <see cref="ISubset{T}"/>; otherwise, <see langword="false"/>.</returns>
 			/// <exception cref="TryAddMethodExceptions.OverflowedException"/>
-			Boolean TryAdd(T element, out Int64 address);
+			Boolean TryAdd
+			(
+				T element, 
+				out Int64 address
+			);
 		}
 
 		/// <summary>
@@ -107,13 +133,21 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="element">The element.</param>
 		/// <param name="address">The address of <paramref name="element"/> if the <see cref="ISubset{T}"/> contains <paramref name="element"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="ISubset{T}"/> contains <paramref name="element"/>; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetAddress(T element, out Int64 address);
+		Boolean TryGetAddress
+		(
+			T element, 
+			out Int64 address
+		);
 		/// <summary>
 		/// Gets an element at an address in the <see cref="ISubset{T}"/> if the <see cref="ISubset{T}"/> contains the element at the address.
 		/// </summary>
 		/// <param name="address">The address.</param>
 		/// <param name="element">The element if the <see cref="ISubset{T}"/> contains the element at <paramref name="address"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="ISubset{T}"/> contains the element at <paramref name="address"/>; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetAt(Int64 address, out T element);
+		Boolean TryGetAt
+		(
+			Int64 address, 
+			out T element
+		);
 	}
 }

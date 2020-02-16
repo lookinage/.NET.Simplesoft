@@ -13,7 +13,11 @@ namespace Simplesoft.Concepts.Sets
 		/// </summary>
 		/// <param name="order">The <see cref="IOrder{T}"/> the <see cref="ClearEvent"/> has happened to.</param>
 		/// <param name="count">The number of removed elements.</param>
-		public delegate void ClearEventResponder(IOrder<T> order, Int64 count);
+		public delegate void ClearEventResponder
+		(
+			IOrder<T> order, 
+			Int64 count
+		);
 
 		/// <summary>
 		/// Provides exceptions for get accessor of Item property.

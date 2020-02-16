@@ -14,7 +14,11 @@ namespace Simplesoft.Concepts.Sets
 		/// </summary>
 		/// <param name="function">The <see cref="IFunction{TInput, TOutput}"/> the <see cref="ClearEvent"/> has happened to.</param>
 		/// <param name="count">The number of removed elements.</param>
-		public delegate void ClearEventResponder(IFunction<TInput, TOutput> function, Int64 count);
+		public delegate void ClearEventResponder
+		(
+			IFunction<TInput, TOutput> function, 
+			Int64 count
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="RemoveEvent"/>.
 		/// </summary>
@@ -22,7 +26,13 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association that is removed from the <see cref="IFunction{TInput, TOutput}"/>.</param>
 		/// <param name="output">The output of the association that is removed from the <see cref="IFunction{TInput, TOutput}"/>.</param>
 		/// <param name="address">The address of the association in the <see cref="IFunction{TInput, TOutput}"/>.</param>
-		public delegate void RemoveEventResponder(IFunction<TInput, TOutput> function, TInput input, TOutput output, Int64 address);
+		public delegate void RemoveEventResponder
+		(
+			IFunction<TInput, TOutput> function, 
+			TInput input, 
+			TOutput output, 
+			Int64 address
+		);
 
 		/// <summary>
 		/// Represents an editor of an <see cref="IFunction{TInput, TOutput}"/>.
@@ -40,7 +50,12 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="input">The input of the association if the <see cref="IFunction{TInput, TOutput}"/> contains the association at <paramref name="address"/>; otherwise, the default value.</param>
 			/// <param name="output">The output of the association if the <see cref="IFunction{TInput, TOutput}"/> contains the association at <paramref name="address"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the association is removed from the <see cref="IFunction{TInput, TOutput}"/>; otherwise, <see langword="false"/>.</returns>
-			Boolean TryRemoveAt(Int64 address, out TInput input, out TOutput output);
+			Boolean TryRemoveAt
+			(
+				Int64 address, 
+				out TInput input, 
+				out TOutput output
+			);
 			/// <summary>
 			/// Removes an association to an input from the <see cref="IFunction{TInput, TOutput}"/>, causes the <see cref="RemoveEvent"/> on the <see cref="IFunction{TInput, TOutput}"/> if the <see cref="IFunction{TInput, TOutput}"/> contains an association to the input.
 			/// </summary>
@@ -48,7 +63,12 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="output">The output if the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, the default value.</param>
 			/// <param name="address">The address of the association in the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, <see langword="false"/>.</returns>
-			Boolean TryRemoveInput(TInput input, out TOutput output, Int64 address);
+			Boolean TryRemoveInput
+			(
+				TInput input, 
+				out TOutput output, 
+				Int64 address
+			);
 			/// <summary>
 			/// Removes an association with an output from the <see cref="IFunction{TInput, TOutput}"/>, causes the <see cref="RemoveEvent"/> on the <see cref="IFunction{TInput, TOutput}"/> if the <see cref="IFunction{TInput, TOutput}"/> contains an association with the output.
 			/// </summary>
@@ -56,7 +76,12 @@ namespace Simplesoft.Concepts.Sets
 			/// <param name="input">The input if the <see cref="IFunction{TInput, TOutput}"/> contains an association with <paramref name="output"/>; otherwise, the default value.</param>
 			/// <param name="address">The address of the association in the <see cref="IFunction{TInput, TOutput}"/> contains an association with <paramref name="output"/>; otherwise, the default value.</param>
 			/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains an association with <paramref name="output"/>; otherwise, <see langword="false"/>.</returns>
-			Boolean TryRemoveOutput(TOutput output, out TInput input, Int64 address);
+			Boolean TryRemoveOutput
+			(
+				TOutput output, 
+				out TInput input, 
+				Int64 address
+			);
 		}
 
 		/// <summary>
@@ -83,7 +108,11 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input.</param>
 		/// <param name="address">The address of the association if the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetAddress(TInput input, out Int64 address);
+		Boolean TryGetAddress
+		(
+			TInput input, 
+			out Int64 address
+		);
 		/// <summary>
 		/// Gets an association at an address in the <see cref="IFunction{TInput, TOutput}"/> if the <see cref="IFunction{TInput, TOutput}"/> contains an association at the address.
 		/// </summary>
@@ -91,20 +120,33 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association if the <see cref="IFunction{TInput, TOutput}"/> contains an association at <paramref name="address"/>; otherwise, the default value.</param>
 		/// <param name="output">The output of the association if the <see cref="IFunction{TInput, TOutput}"/> contains an association at <paramref name="address"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains an association at <paramref name="address"/>; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetAt(Int64 address, out TInput input, out TOutput output);
+		Boolean TryGetAt
+		(
+			Int64 address, 
+			out TInput input, 
+			out TOutput output
+		);
 		/// <summary>
 		/// Gets an output associated to an input in the <see cref="IFunction{TInput, TOutput}"/> if the <see cref="IFunction{TInput, TOutput}"/> contains an association to the input.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="output">The output of the association if the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains an association to <paramref name="input"/>; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetOutput(TInput input, out TOutput output);
+		Boolean TryGetOutput
+		(
+			TInput input, 
+			out TOutput output
+		);
 		/// <summary>
 		/// Gets an input an output associated to if the <see cref="IFunction{TInput, TOutput}"/> contains the association.
 		/// </summary>
 		/// <param name="output">The output.</param>
 		/// <param name="input">The input if the <see cref="IFunction{TInput, TOutput}"/> contains the association; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> whether the <see cref="IFunction{TInput, TOutput}"/> contains the association; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetInput(TOutput output, out TInput input);
+		Boolean TryGetInput
+		(
+			TOutput output, 
+			out TInput input
+		);
 	}
 }

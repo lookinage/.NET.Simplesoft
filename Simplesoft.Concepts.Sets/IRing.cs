@@ -13,25 +13,41 @@ namespace Simplesoft.Concepts.Sets
 		/// </summary>
 		/// <param name="ring">The <see cref="IRing{T}"/> the <see cref="RemoveBackEvent"/> has happened to.</param>
 		/// <param name="element">The element that is removed from the <see cref="IRing{T}"/>.</param>
-		public delegate void RemoveBackEventResponder(IRing<T> ring, T element);
+		public delegate void RemoveBackEventResponder
+		(
+			IRing<T> ring, 
+			T element
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="RemoveFrontEvent"/>.
 		/// </summary>
 		/// <param name="ring">The <see cref="IRing{T}"/> the <see cref="RemoveFrontEvent"/> has happened to.</param>
 		/// <param name="element">The element that is removed from the <see cref="IRing{T}"/>.</param>
-		public delegate void RemoveFrontEventResponder(IRing<T> ring, T element);
+		public delegate void RemoveFrontEventResponder
+		(
+			IRing<T> ring, 
+			T element
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="AddBackEvent"/>.
 		/// </summary>
 		/// <param name="ring">The <see cref="IRing{T}"/> the <see cref="AddBackEvent"/> has happened to.</param>
 		/// <param name="element">The element that is added to the <see cref="IRing{T}"/>.</param>
-		public delegate void AddBackEventResponder(IRing<T> ring, T element);
+		public delegate void AddBackEventResponder
+		(
+			IRing<T> ring, 
+			T element
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="AddFrontEvent"/>.
 		/// </summary>
 		/// <param name="ring">The <see cref="IRing{T}"/> the <see cref="AddFrontEvent"/> has happened to.</param>
 		/// <param name="element">The element that is added to the <see cref="IRing{T}"/>.</param>
-		public delegate void AddFrontEventResponder(IRing<T> ring, T element);
+		public delegate void AddFrontEventResponder
+		(
+			IRing<T> ring, 
+			T element
+		);
 
 		/// <summary>
 		/// Represents an editor of an <see cref="IRing{T}"/>.

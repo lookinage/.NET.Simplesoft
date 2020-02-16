@@ -13,13 +13,21 @@ namespace Simplesoft.Concepts.Sets
 		/// </summary>
 		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="RemoveEvent"/> has happened to.</param>
 		/// <param name="element">The element that is removed from the <see cref="IStack{T}"/>.</param>
-		public delegate void RemoveEventResponder(IStack<T> stack, T element);
+		public delegate void RemoveEventResponder
+		(
+			IStack<T> stack, 
+			T element
+		);
 		/// <summary>
 		/// References a method that responds to the <see cref="AddEvent"/>.
 		/// </summary>
 		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="AddEvent"/> has happened to.</param>
 		/// <param name="element">The element that is added to the <see cref="IStack{T}"/>.</param>
-		public delegate void AddEventResponder(IStack<T> stack, T element);
+		public delegate void AddEventResponder
+		(
+			IStack<T> stack, 
+			T element
+		);
 
 		/// <summary>
 		/// Represents an editor of an <see cref="IStack{T}"/>.

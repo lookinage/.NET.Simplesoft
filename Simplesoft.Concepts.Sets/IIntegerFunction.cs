@@ -60,7 +60,12 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association if the association exists; otherwise, the default value.</param>
 		/// <param name="output">The output of the association if the association exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the association exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotLessThanByInputs(Int64 threshold, out Int64 input, out Int64 output);
+		Boolean TryGetNotLessThanByInputs
+		(
+			Int64 threshold, 
+			out Int64 input, 
+			out Int64 output
+		);
 		/// <summary>
 		/// Gets an associations of the <see cref="IIntegerFunction"/> input of which is less than or equal to a threshold integer if the association exists.
 		/// </summary>
@@ -68,7 +73,12 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association if the association exists; otherwise, the default value.</param>
 		/// <param name="output">The output of the association if the association exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the association exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotGreaterThanByInputs(Int64 threshold, out Int64 input, out Int64 output);
+		Boolean TryGetNotGreaterThanByInputs
+		(
+			Int64 threshold, 
+			out Int64 input, 
+			out Int64 output
+		);
 		/// <summary>
 		/// Gets an associations of the <see cref="IIntegerFunction"/> output of which is greater than or equal to a threshold integer if the association exists.
 		/// </summary>
@@ -76,7 +86,12 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association if the association exists; otherwise, the default value.</param>
 		/// <param name="output">The output of the association if the association exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the association exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotLessThanByOutputs(Int64 threshold, out Int64 input, out Int64 output);
+		Boolean TryGetNotLessThanByOutputs
+		(
+			Int64 threshold, 
+			out Int64 input, 
+			out Int64 output
+		);
 		/// <summary>
 		/// Gets an associations of the <see cref="IIntegerFunction"/> output of which is less than or equal to a threshold integer if the association exists.
 		/// </summary>
@@ -84,6 +99,11 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="input">The input of the association if the association exists; otherwise, the default value.</param>
 		/// <param name="output">The output of the association if the association exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the association exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotGreaterThanByOutputs(Int64 threshold, out Int64 input, out Int64 output);
+		Boolean TryGetNotGreaterThanByOutputs
+		(
+			Int64 threshold, 
+			out Int64 input, 
+			out Int64 output
+		);
 	}
 }

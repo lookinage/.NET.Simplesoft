@@ -34,13 +34,21 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="element">The element if exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotLessThan(Int64 threshold, out Int64 element);
+		Boolean TryGetNotLessThan
+		(
+			Int64 threshold, 
+			out Int64 element
+		);
 		/// <summary>
 		/// Gets an element of the <see cref="IIntegerSubset"/> that is less than or equal to a threshold integer if the element exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="element">The element if exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotGreaterThan(Int64 threshold, out Int64 element);
+		Boolean TryGetNotGreaterThan
+		(
+			Int64 threshold, 
+			out Int64 element
+		);
 	}
 }

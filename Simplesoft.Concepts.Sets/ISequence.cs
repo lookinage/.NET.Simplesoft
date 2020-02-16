@@ -15,7 +15,9 @@ namespace Simplesoft.Concepts.Sets
 		{
 			get
 			{
-				Int32 count = 0x0;
+				Int32 count;
+				
+				count = 0x0;
 				foreach (T element in this)
 					count++;
 				return count;
