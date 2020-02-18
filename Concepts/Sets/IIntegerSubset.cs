@@ -34,22 +34,22 @@ namespace Simplesoft.Concepts.Sets
 		/// <returns>A descending <see cref="ISequence{T}"/> of elements of the <see cref="IIntegerSubset"/> within <paramref name="interval"/>.</returns>
 		ISequence<Integer> GetDescendingSequenceWithinInterval(IntegerInterval interval);
 		/// <summary>
-		/// Gets an element of the <see cref="IIntegerSubset"/> that is greater than or equal to a threshold integer if the element exists.
+		/// Gets an element of the <see cref="IIntegerSubset"/> that is greater than or equal to a threshold integer if such an element exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="element">The element if exists; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+		/// <param name="element">The element if such an element exists; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> if such an element exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotLessThan
 		(
 			Integer threshold, 
 			out Integer element
 		);
 		/// <summary>
-		/// Gets an element of the <see cref="IIntegerSubset"/> that is less than or equal to a threshold integer if the element exists.
+		/// Gets an element of the <see cref="IIntegerSubset"/> that is less than or equal to a threshold integer if such an element exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="element">The element if exists; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+		/// <param name="element">The element if such an element exists; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> if such an element exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotGreaterThan
 		(
 			Integer threshold, 
