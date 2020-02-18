@@ -13,53 +13,53 @@ namespace Simplesoft.Concepts.Sets
 		public new interface IEditor : IPairSubset<Integer, Integer>.IEditor { }
 
 		/// <summary>
-		/// Gets an ascending by first elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
+		/// Gets an ascending by first element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
 		/// </summary>
-		ISequence<Pair<Integer, Integer>> AscendingByInputsSequence { get; }
+		ISequence<Pair<Integer, Integer>> AscendingByFirstSequence { get; }
 		/// <summary>
-		/// Gets a descending by first elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
+		/// Gets a descending by first element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
 		/// </summary>
-		ISequence<Pair<Integer, Integer>> DescendingByInputsSequence { get; }
+		ISequence<Pair<Integer, Integer>> DescendingByFirstSequence { get; }
 		/// <summary>
-		/// Gets an ascending by second elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
+		/// Gets an ascending by second element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
 		/// </summary>
-		ISequence<Pair<Integer, Integer>> AscendingByOutputsSequence { get; }
+		ISequence<Pair<Integer, Integer>> AscendingBySecondSequence { get; }
 		/// <summary>
-		/// Gets a descending by second elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
+		/// Gets a descending by second element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/>.
 		/// </summary>
-		ISequence<Pair<Integer, Integer>> DescendingByOutputsSequence { get; }
+		ISequence<Pair<Integer, Integer>> DescendingBySecondSequence { get; }
 
 		/// <summary>
-		/// Gets an ascending by first elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
+		/// Gets an ascending by first element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
 		/// </summary>
 		/// <param name="interval">The <see cref="IntegerInterval"/>.</param>
 		/// <returns>An ascending <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
-		ISequence<Pair<Integer, Integer>> GetAscendingByInputsSequenceWithinInterval(IntegerInterval interval);
+		ISequence<Pair<Integer, Integer>> GetAscendingByFirstSequenceWithinInterval(IntegerInterval interval);
 		/// <summary>
-		/// Gets a descending by first elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
+		/// Gets a descending by first element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
 		/// </summary>
 		/// <param name="interval">The <see cref="IntegerInterval"/>.</param>
 		/// <returns>A descending <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
-		ISequence<Pair<Integer, Integer>> GetDescendingByInputsSequenceWithinInterval(IntegerInterval interval);
+		ISequence<Pair<Integer, Integer>> GetDescendingByFirstSequenceWithinInterval(IntegerInterval interval);
 		/// <summary>
-		/// Gets an ascending by second elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
+		/// Gets an ascending by second element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
 		/// </summary>
 		/// <param name="interval">The <see cref="IntegerInterval"/>.</param>
 		/// <returns>An ascending <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
-		ISequence<Pair<Integer, Integer>> GetAscendingByOutputsSequenceWithinInterval(IntegerInterval interval);
+		ISequence<Pair<Integer, Integer>> GetAscendingBySecondSequenceWithinInterval(IntegerInterval interval);
 		/// <summary>
-		/// Gets a descending by second elements <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
+		/// Gets a descending by second element <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within an <see cref="IntegerInterval"/>.
 		/// </summary>
 		/// <param name="interval">The <see cref="IntegerInterval"/>.</param>
 		/// <returns>A descending <see cref="ISequence{T}"/> of pairs of the <see cref="IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
-		ISequence<Pair<Integer, Integer>> GetDescendingByOutputsSequenceWithinInterval(IntegerInterval interval);
+		ISequence<Pair<Integer, Integer>> GetDescendingBySecondSequenceWithinInterval(IntegerInterval interval);
 		/// <summary>
 		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> first of which is greater than or equal to a threshold integer if the pair exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotLessThanByInputs
+		Boolean TryGetNotLessThanByFirst
 		(
 			Integer threshold, 
 			out Pair<Integer, Integer> pair
@@ -70,7 +70,7 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotGreaterThanByInputs
+		Boolean TryGetNotGreaterThanByFirst
 		(
 			Integer threshold,
 			out Pair<Integer, Integer> pair
@@ -81,7 +81,7 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotLessThanByOutputs
+		Boolean TryGetNotLessThanBySecond
 		(
 			Integer threshold,
 			out Pair<Integer, Integer> pair
@@ -92,7 +92,7 @@ namespace Simplesoft.Concepts.Sets
 		/// <param name="threshold">The threshold integer.</param>
 		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-		Boolean TryGetNotGreaterThanByOutputs
+		Boolean TryGetNotGreaterThanBySecond
 		(
 			Integer threshold,
 			out Pair<Integer, Integer> pair
