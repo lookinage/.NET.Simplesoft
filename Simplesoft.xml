@@ -146,27 +146,27 @@
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotLessThanByFirst(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
             <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is greater than or equal to a threshold integer if the pair exists.
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is greater than or equal to a threshold integer if such a pair exists.
             </summary>
             <param name="threshold">The threshold integer.</param>
             <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+            <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotGreaterThanByFirst(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
             <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is less than or equal to a threshold integer if the pair exists.
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is less than or equal to a threshold integer if such a pair exists.
             </summary>
             <param name="threshold">The threshold integer.</param>
             <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+            <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotLessThanBySecond(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
             <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> second of which is greater than or equal to a threshold integer if the pair exists.
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> second of which is greater than or equal to a threshold integer if such a pair exists.
             </summary>
             <param name="threshold">The threshold integer.</param>
             <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+            <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotGreaterThanBySecond(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
             <summary>
@@ -174,7 +174,7 @@
             </summary>
             <param name="threshold">The threshold integer.</param>
             <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+            <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="T:Simplesoft.Concepts.Sets.IIntegerSubset">
             <summary>
@@ -212,19 +212,19 @@
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.TryGetNotLessThan(Simplesoft.Integer,Simplesoft.Integer@)">
             <summary>
-            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is greater than or equal to a threshold integer if the element exists.
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is greater than or equal to a threshold integer if such an element exists.
             </summary>
             <param name="threshold">The threshold integer.</param>
-            <param name="element">The element if exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+            <param name="element">The element if such an element exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if such an element exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.TryGetNotGreaterThan(Simplesoft.Integer,Simplesoft.Integer@)">
             <summary>
-            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is less than or equal to a threshold integer if the element exists.
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is less than or equal to a threshold integer if such an element exists.
             </summary>
             <param name="threshold">The threshold integer.</param>
-            <param name="element">The element if exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+            <param name="element">The element if such an element exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if such an element exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="T:Simplesoft.Concepts.Sets.IOrder`1">
             <summary>
