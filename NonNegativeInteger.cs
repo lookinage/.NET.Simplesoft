@@ -3,7 +3,7 @@
 namespace Simplesoft
 {
 	/// <summary>
-	/// Represents a non-negative 64-bit signed integer.
+	/// Represents a non-negative integer.
 	/// </summary>
 	public struct NonNegativeInteger
 	{

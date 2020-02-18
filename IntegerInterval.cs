@@ -3,7 +3,7 @@
 namespace Simplesoft
 {
 	/// <summary>
-	/// Represents an interval defined by two 64-bit signed integers.
+	/// Represents an interval defined by two integers.
 	/// </summary>
 	public struct IntegerInterval
 	{
@@ -21,8 +21,8 @@ namespace Simplesoft
 			}
 		}
 
-		internal Int64 _min;
-		internal Int64 _max;
+		internal Integer _min;
+		internal Integer _max;
 
 		/// <summary>
 		/// Initializes the <see cref="IntegerInterval"/>
@@ -32,8 +32,8 @@ namespace Simplesoft
 		/// <exception cref="ConstructorExceptions.MinMaxInvalidException"/>
 		public IntegerInterval
 		(
-			Int64 min,
-			Int64 max
+			Integer min,
+			Integer max
 		)
 		{
 			if (max < min)
@@ -45,10 +45,10 @@ namespace Simplesoft
 		/// <summary>
 		/// Gets the left bound of the <see cref="IntegerInterval"/>.
 		/// </summary>
-		public Int64 Min => _min;
+		public Integer Min => _min;
 		/// <summary>
 		/// Gets the right bound of the <see cref="IntegerInterval"/>.
 		/// </summary>
-		public Int64 Max => _max;
+		public Integer Max => _max;
 	}
 }

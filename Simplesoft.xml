@@ -1,0 +1,1059 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simplesoft</name>
+    </assembly>
+    <members>
+        <member name="T:Simplesoft.ArrayExtension">
+            <summary>
+            Provides extended functional for <see cref="T:System.Array"/> objects.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.ArrayExtension.EnsureLengthExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.ArrayExtension.EnsureLength``1(``0[]@,Simplesoft.NonNegativeInteger)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.ArrayExtension.EnsureLengthExceptions.DesiredLengthInvalidException">
+            <summary>
+            Represents the exception that is thrown when the desiredLength argument value is greater than <see cref="F:Simplesoft.ArrayExtension.MaxArrayLength"/>.
+            </summary>
+        </member>
+        <member name="F:Simplesoft.ArrayExtension.MaxArrayLength">
+            <summary>
+            The maximum array length.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.ArrayExtension.EnsureLength``1(``0[]@,Simplesoft.NonNegativeInteger)">
+            <summary>
+            Initializes an <see cref="T:System.Array"/> by a desired length if the <see cref="T:System.Array"/> is <see langword="null"/>; otherwise, doubles the length of the <see cref="T:System.Array"/> while the length is less than the desired length.
+            </summary>
+            <param name="array">The <see cref="T:System.Array"/> which length is to be ensured.</param>
+            <param name="desiredLength">The desired length of the <see cref="T:System.Array"/>.</param>
+            <exception cref="T:Simplesoft.ArrayExtension.EnsureLengthExceptions.DesiredLengthInvalidException"/>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IEnumerator`1">
+            <summary>
+            Represents an enumerator of elements of an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions">
+            <summary>
+            Provides exceptions for get accessor of <see cref="P:Simplesoft.Concepts.Sets.IEnumerator`1.Current"/> property.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.NotStartedException">
+            <summary>
+            Represents the exception that is thrown when the current element of an <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is accessed when the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is not started.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.NotStartedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.NotStartedException"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.FinishedException">
+            <summary>
+            Represents the exception that is thrown when the current element of an <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is accessed when the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is finished.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.FinishedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.FinishedException"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IEnumerator`1.Current">
+            <summary>
+            Gets the current element of the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/>.
+            </summary>
+            <exception cref="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.NotStartedException"/>
+            <exception cref="T:Simplesoft.Concepts.Sets.IEnumerator`1.CurrentPropertyGetAccessorExceptions.FinishedException"/>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IEnumerator`1.Started">
+            <summary>
+            Gets the value that indicates whether the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is started.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IEnumerator`1.Finished">
+            <summary>
+            Gets the value that indicates whether the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is finished.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IEnumerator`1.MoveNext">
+            <summary>
+            Sets the next element of the <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> as the current if the current element is not last.
+            </summary>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is not finished yet and the next element is set as current; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1">
+            <summary>
+            Represents an order of elements of a set.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.IEditor.ItemPropertySetAccessorExceptions">
+            <summary>
+            Provides exceptions for get accessor of Item property.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.IEditor.ItemPropertySetAccessorExceptions.OffsetInvalidException">
+            <summary>
+            Represents the exception that is thrown when the offset argument value is greater than or equal to the number of elements of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IOrder`1.IEditor.ItemPropertySetAccessorExceptions.OffsetInvalidException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1.IEditor.ItemPropertySetAccessorExceptions.OffsetInvalidException"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IOrder`1.IEditor.Item(Simplesoft.NonNegativeInteger)">
+            <summary>
+            Sets an element at an offset from the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+            <param name="offset">The offset.</param>
+            <exception cref="T:Simplesoft.Concepts.Sets.IOrder`1.IEditor.ItemPropertySetAccessorExceptions.OffsetInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IOrder`1.IEditor.Clear">
+            <summary>
+            Removes all the elements from the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/> and causes the <see cref="E:Simplesoft.Concepts.Sets.IOrder`1.ClearEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.ItemPropertyGetAccessorExceptions">
+            <summary>
+            Provides exceptions for get accessor of Item property.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.ItemPropertyGetAccessorExceptions.OffsetInvalidException">
+            <summary>
+            Represents the exception that is thrown when the offset argument value is greater than or equal to the number of elements of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IOrder`1.ItemPropertyGetAccessorExceptions.OffsetInvalidException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1.ItemPropertyGetAccessorExceptions.OffsetInvalidException"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IOrder`1.ClearEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IOrder`1.ClearEvent"/>.
+            </summary>
+            <param name="order">The <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IOrder`1.ClearEvent"/> has happened to.</param>
+            <param name="count">The number of removed elements.</param>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IOrder`1.ElementSequence">
+            <summary>
+            Gets the <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of the elements of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IOrder`1.Count">
+            <summary>
+            Gets the number of elements of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IOrder`1.Item(Simplesoft.NonNegativeInteger)">
+            <summary>
+            Gets an element at an offset from the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+            <param name="offset">The offset.</param>
+            <exception cref="T:Simplesoft.Concepts.Sets.IOrder`1.ItemPropertyGetAccessorExceptions.OffsetInvalidException"/>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IOrder`1.ClearEvent">
+            <summary>
+            Occurs when all elements are removed from the <see cref="T:Simplesoft.Concepts.Sets.IOrder`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2">
+            <summary>
+            Represents a subset of <see cref="T:Simplesoft.Concepts.Sets.Pair`2"/> instances.
+            </summary>
+            <typeparam name="TFirst">The type of elements of the first set.</typeparam>
+            <typeparam name="TSecond">The type of elements of the second set.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirst(`0,`1,Simplesoft.Integer@)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecondMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecond(`0,`1,Simplesoft.Integer@)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecondMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecondMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecondMethodExceptions.OverflowedException"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryRemoveByFirst(`0,`1@,Simplesoft.Integer)">
+            <summary>
+            Removes the first pair consisting of an element of the first set from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="second">The element of the second set if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryRemoveBySecond(`1,`0@,Simplesoft.Integer)">
+            <summary>
+            Removes the first pair consisting of an element of the second set from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="second">The element of the second.</param>
+            <param name="first">The element of the first set if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirst(`0,`1,Simplesoft.Integer@)">
+            <summary>
+            Adds a pair to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> does not contain a pair consisting of the element of the first set.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="second">The element of the second set.</param>
+            <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the pair was added; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the pair was added to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddBySecond(`0,`1,Simplesoft.Integer@)">
+            <summary>
+            Adds a pair to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> does not contain a pair consisting of the element of the second set.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="second">The element of the second set.</param>
+            <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the pair was added; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the pair was added to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetAddressByFirst(`0,Simplesoft.Integer@)">
+            <summary>
+            Gets the address of the first pair consisting of an element of the first set in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="address">The address of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetAddressBySecond(`1,Simplesoft.Integer@)">
+            <summary>
+            Gets the address of the first pair consisting of an element of the second set in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="second">The element of the second set.</param>
+            <param name="address">The address of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetSecondByFirst(`0,`1@)">
+            <summary>
+            Gets the element of the second set of the first pair consisting of an element of the first set of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="second">The element of the second set of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetFirstBySecond(`1,`0@)">
+            <summary>
+            Gets the element of the first set of the first pair consisting of an element of the second set of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            </summary>
+            <param name="second">The element of the second set.</param>
+            <param name="first">The element of the first set of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetFirstsByFirst(`0)">
+            <summary>
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the second set paired with an element of the first set.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <returns>The <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetSecondsBySecond(`1)">
+            <summary>
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the first set paired with an element of the second set.
+            </summary>
+            <param name="second">The element of the second set.</param>
+            <returns>The <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset">
+            <summary>
+            Represents an <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> where the first set and the second set are the sets of integers.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.AscendingByInputsSequence">
+            <summary>
+            Gets an ascending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.DescendingByInputsSequence">
+            <summary>
+            Gets a descending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.AscendingByOutputsSequence">
+            <summary>
+            Gets an ascending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.DescendingByOutputsSequence">
+            <summary>
+            Gets a descending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetAscendingByInputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetDescendingByInputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetAscendingByOutputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetDescendingByOutputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotLessThanByInputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> first of which is greater than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
+            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotGreaterThanByInputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> first of which is less than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
+            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotLessThanByOutputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> second of which is greater than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
+            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotGreaterThanByOutputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> second of which is less than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
+            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1">
+            <summary>
+            Represents an <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> of real numbers.
+            </summary>
+            <typeparam name="TNumber">The type that represents real numbers.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberSubset`1.AscendingSequence">
+            <summary>
+            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IRealNumberSubset`1.DescendingSequence">
+            <summary>
+            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.GetAscendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.GetDescendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.TryGetNotLessThan(Simplesoft.Integer,Simplesoft.Integer@)">
+            <summary>
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> that is greater than or equal to a threshold integer if the element exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="element">The element if exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.TryGetNotGreaterThan(Simplesoft.Integer,Simplesoft.Integer@)">
+            <summary>
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> that is less than or equal to a threshold integer if the element exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="element">The element if exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1">
+            <summary>
+            Represents an order of elements implemented as a ring.
+            </summary>
+            <typeparam name="T">The type of elements.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFrontMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFront(`0)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFrontMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFrontMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFrontMethodExceptions.OverflowedException"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBackMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBack(`0)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBackMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBackMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBackMethodExceptions.OverflowedException"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.RemoveBack(`0@)">
+            <summary>
+            Removes an element from the end of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> is not empty.
+            </summary>
+            <param name="element">The element if the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> is not empty; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the element is removed from the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.RemoveFront(`0@)">
+            <summary>
+            Removes an element from the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> is not empty.
+            </summary>
+            <param name="element">The element if the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> is not empty; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the element is removed from the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBack(`0)">
+            <summary>
+            Adds an element at the end of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> and causes the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddBackEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+            <param name="element">The element.</param>
+            <exception cref="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddBackMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFront(`0)">
+            <summary>
+            Adds an element at the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> and causes the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddFrontEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+            <param name="element">The element.</param>
+            <exception cref="T:Simplesoft.Concepts.Sets.IRing`1.IEditor.AddFrontMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.RemoveBackEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveBackEvent"/>.
+            </summary>
+            <param name="ring">The <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveBackEvent"/> has happened to.</param>
+            <param name="element">The element that is removed from the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEvent"/>.
+            </summary>
+            <param name="ring">The <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEvent"/> has happened to.</param>
+            <param name="element">The element that is removed from the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.AddBackEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddBackEvent"/>.
+            </summary>
+            <param name="ring">The <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddBackEvent"/> has happened to.</param>
+            <param name="element">The element that is added to the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IRing`1.AddFrontEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddFrontEvent"/>.
+            </summary>
+            <param name="ring">The <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IRing`1.AddFrontEvent"/> has happened to.</param>
+            <param name="element">The element that is added to the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.</param>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IRing`1.RemoveBackEvent">
+            <summary>
+            Occurs when an element is removed from the end of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IRing`1.RemoveFrontEvent">
+            <summary>
+            Occurs when an element is removed from the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IRing`1.AddBackEvent">
+            <summary>
+            Occurs when an element is added at the end of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IRing`1.AddFrontEvent">
+            <summary>
+            Occurs when an element is added at the beginning of the <see cref="T:Simplesoft.Concepts.Sets.IRing`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISequence`1">
+            <summary>
+            Represents a sequence of elements.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISequence`1.GetEnumerator">
+            <summary>
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> of the elements of the <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.
+            </summary>
+            <returns>The <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1">
+            <summary>
+            Represents an order of elements implemented as a stack.
+            </summary>
+            <typeparam name="T">The type of elements.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1.IEditor.AddMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.IStack`1.IEditor.Add(`0)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1.IEditor.AddMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IStack`1.IEditor.AddMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.IStack`1.IEditor.AddMethodExceptions.OverflowedException"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IStack`1.IEditor.Remove(`0@)">
+            <summary>
+            Removes an element from the end of the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> is not empty.
+            </summary>
+            <param name="element">The element if the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> is not empty; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the element is removed from the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IStack`1.IEditor.Add(`0)">
+            <summary>
+            Adds an element at the end of the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> and causes the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.
+            </summary>
+            <param name="element">The element.</param>
+            <exception cref="T:Simplesoft.Concepts.Sets.IStack`1.IEditor.AddMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1.RemoveEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.RemoveEvent"/>.
+            </summary>
+            <param name="stack">The <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.RemoveEvent"/> has happened to.</param>
+            <param name="element">The element that is removed from the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IStack`1.AddEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.AddEvent"/>.
+            </summary>
+            <param name="stack">The <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/> the <see cref="E:Simplesoft.Concepts.Sets.IStack`1.AddEvent"/> has happened to.</param>
+            <param name="element">The element that is added to the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.</param>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IStack`1.RemoveEvent">
+            <summary>
+            Occurs when an element is removed from the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.IStack`1.AddEvent">
+            <summary>
+            Occurs when an element is added to the <see cref="T:Simplesoft.Concepts.Sets.IStack`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1">
+            <summary>
+            Represents a subset of elements of a set.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAddMethodExceptions">
+            <summary>
+            Provides exceptions for <see cref="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAdd(`0,Simplesoft.Integer@)"/> method.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAddMethodExceptions.OverflowedException">
+            <summary>
+            Represents the exception that is thrown when the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the maximum number of elements.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAddMethodExceptions.OverflowedException.#ctor">
+            <summary>
+            Initializes the <see cref="T:System.OverflowException"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.Clear">
+            <summary>
+            Removes all the elements from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> and causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.ClearEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryRemoveAt(Simplesoft.Integer,`0@)">
+            <summary>
+            Removes an element at an address from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element at the address.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="element">The element if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element at <paramref name="address"/>; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the element was removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryRemove(`0,Simplesoft.Integer@)">
+            <summary>
+            Removes an element from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="address">The address of <paramref name="element"/> in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if <paramref name="element"/> was removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether <paramref name="element"/> was removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAdd(`0,Simplesoft.Integer@)">
+            <summary>
+            Adds an element to the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> does not contain the element.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="address">The address of <paramref name="element"/> in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if <paramref name="element"/> is added to the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether <paramref name="element"/> was added to the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:Simplesoft.Concepts.Sets.ISubset`1.IEditor.TryAddMethodExceptions.OverflowedException"/>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.ClearEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.ClearEvent"/>.
+            </summary>
+            <param name="subset">The <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.ClearEvent"/> has happened to.</param>
+            <param name="count">The number of removed elements.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.RemoveEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/>.
+            </summary>
+            <param name="subset">The <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> has happened to.</param>
+            <param name="element">The element that was removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.</param>
+            <param name="address">The address of <paramref name="element"/> in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.</param>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.ISubset`1.AddEventResponder">
+            <summary>
+            References a method that responds to the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/>.
+            </summary>
+            <param name="subset">The <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> has happened to.</param>
+            <param name="element">The element that was added to the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.</param>
+            <param name="address">The address of <paramref name="element"/> in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.</param>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.ISubset`1.Count">
+            <summary>
+            Gets the number of elements of the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.ISubset`1.ElementSequence">
+            <summary>
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of the elements of the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.ISubset`1.ClearEvent">
+            <summary>
+            Occurs when all elements are removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent">
+            <summary>
+            Occurs when an element is removed from the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent">
+            <summary>
+            Occurs when an element is added to the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.TryGetAddress(`0,Simplesoft.Integer@)">
+            <summary>
+            Gets an address of an element in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="address">The address of <paramref name="element"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains <paramref name="element"/>; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains <paramref name="element"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.ISubset`1.TryGetAt(Simplesoft.Integer,`0@)">
+            <summary>
+            Gets an element at an address in the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element at the address.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="element">The element if the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element at <paramref name="address"/>; otherwise, the default value.</param>
+            <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> contains the element at <paramref name="address"/>; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.Pair`2">
+            <summary>
+            Represents a relation between two elements of two different sets.
+            </summary>
+            <typeparam name="TFirst">The type of elements of the first set.</typeparam>
+            <typeparam name="TSecond">The type of elements of the second set.</typeparam>
+        </member>
+        <member name="F:Simplesoft.Concepts.Sets.Pair`2.First">
+            <summary>
+            The element of the first set.
+            </summary>
+        </member>
+        <member name="F:Simplesoft.Concepts.Sets.Pair`2.Second">
+            <summary>
+            The element of the second set.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.Pair`2.#ctor(`0,`1)">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.Concepts.Sets.Pair`2"/>.
+            </summary>
+            <param name="first">The element of the first set.</param>
+            <param name="second">The element of the second set.</param>
+        </member>
+        <member name="T:Simplesoft.Integer">
+            <summary>
+            Represents an integer.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Integer.op_Implicit(System.Int64)~Simplesoft.Integer">
+            <summary>
+            Converts an <see cref="T:Simplesoft.Integer"/> to an <see cref="T:Simplesoft.Integer"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.Integer"/>.</param>
+        </member>
+        <member name="M:Simplesoft.Integer.op_Implicit(Simplesoft.Integer)~System.Int64">
+            <summary>
+            Converts an <see cref="T:Simplesoft.Integer"/> to an <see cref="T:Simplesoft.Integer"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonPositiveInteger"/>.</param>
+        </member>
+        <member name="F:Simplesoft.Integer.MinValue">
+            <summary>
+            The smallest possible integer value.
+            </summary>
+        </member>
+        <member name="F:Simplesoft.Integer.MaxValue">
+            <summary>
+            The largest possible integer value.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.IntegerInterval">
+            <summary>
+            Represents an interval defined by two integers.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.IntegerInterval.ConstructorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.IntegerInterval"/> constructors.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.IntegerInterval.ConstructorExceptions.MinMaxInvalidException">
+            <summary>
+            Represents the exception that is thrown when the min argument value is less than the max argument value.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.IntegerInterval.#ctor(Simplesoft.Integer,Simplesoft.Integer)">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.IntegerInterval"/>
+            </summary>
+            <param name="min">The left bound of the <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <param name="max">The right bound of the <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <exception cref="T:Simplesoft.IntegerInterval.ConstructorExceptions.MinMaxInvalidException"/>
+        </member>
+        <member name="P:Simplesoft.IntegerInterval.Min">
+            <summary>
+            Gets the left bound of the <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.IntegerInterval.Max">
+            <summary>
+            Gets the right bound of the <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeInteger">
+            <summary>
+            Represents a non-negative integer.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeInteger.ImplicitOperatorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonNegativeInteger"/> implicit operators.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeInteger.ImplicitOperatorExceptions.ValueInvalidException">
+            <summary>
+            Represents the exception that is thrown when the value argument value is less than 0.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.NonNegativeInteger.op_Implicit(System.Int64)~Simplesoft.NonNegativeInteger">
+            <summary>
+            Converts an <see cref="T:System.Int64"/> to a <see cref="T:Simplesoft.NonNegativeInteger"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.Int64"/>.</param>
+            <exception cref="T:Simplesoft.NonNegativeInteger.ImplicitOperatorExceptions.ValueInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.NonNegativeInteger.op_Implicit(Simplesoft.NonNegativeInteger)~System.Int64">
+            <summary>
+            Converts a <see cref="T:Simplesoft.NonNegativeInteger"/> to an <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonNegativeInteger"/>.</param>
+        </member>
+        <member name="M:Simplesoft.NonNegativeInteger.op_UnaryNegation(Simplesoft.NonNegativeInteger)">
+            <summary>
+            Inverts a <see cref="T:Simplesoft.NonNegativeInteger"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonNegativeInteger"/>.</param>
+            <returns>An additive inverse of <paramref name="value"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval">
+            <summary>
+            Represents an interval defined by two integers whose values are non-negative.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval.ConstructorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonNegativeIntegerInterval"/> constructors.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval.ConstructorExceptions.MinInvalidException">
+            <summary>
+            Represents the exception that is thrown when the min argument value is less than 0.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval.ConstructorExceptions.MinMaxInvalidException">
+            <summary>
+            Represents the exception that is thrown when the min argument value is less than the max argument value.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval.ImplicitOperatorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonNegativeIntegerInterval"/> implicit operators.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonNegativeIntegerInterval.ImplicitOperatorExceptions.MinInvalidException">
+            <summary>
+            Represents the exception that is thrown when the left bound of the interval argument value is less than 0.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.NonNegativeIntegerInterval.op_Implicit(Simplesoft.IntegerInterval)~Simplesoft.NonNegativeIntegerInterval">
+            <summary>
+            Converts an <see cref="T:Simplesoft.IntegerInterval"/> to a <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <exception cref="T:Simplesoft.NonNegativeIntegerInterval.ImplicitOperatorExceptions.MinInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.NonNegativeIntegerInterval.op_Implicit(Simplesoft.NonNegativeIntegerInterval)~Simplesoft.IntegerInterval">
+            <summary>
+            Converts a <see cref="T:Simplesoft.NonNegativeIntegerInterval"/> to an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.</param>
+        </member>
+        <member name="M:Simplesoft.NonNegativeIntegerInterval.op_UnaryNegation(Simplesoft.NonNegativeIntegerInterval)">
+            <summary>
+            Inverts a <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.</param>
+            <returns>A symmetric <see cref="T:Simplesoft.NonPositiveIntegerInterval"/> of <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.NonNegativeIntegerInterval.#ctor(Simplesoft.Integer,Simplesoft.Integer)">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>
+            </summary>
+            <param name="min">The left bound of the <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.</param>
+            <param name="max">The right bound of the <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.</param>
+            <exception cref="T:Simplesoft.NonNegativeIntegerInterval.ConstructorExceptions.MinInvalidException"/>
+            <exception cref="T:Simplesoft.NonNegativeIntegerInterval.ConstructorExceptions.MinMaxInvalidException"/>
+        </member>
+        <member name="P:Simplesoft.NonNegativeIntegerInterval.Min">
+            <summary>
+            Gets the left bound of the <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.NonNegativeIntegerInterval.Max">
+            <summary>
+            Gets the right bound of the <see cref="T:Simplesoft.NonNegativeIntegerInterval"/>.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveInteger">
+            <summary>
+            Represents a non-positive integer.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveInteger.ImplicitOperatorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonPositiveInteger"/> implicit operators.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveInteger.ImplicitOperatorExceptions.ValueInvalidException">
+            <summary>
+            Represents the exception that is thrown when the value argument value is greater than 0.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.NonPositiveInteger.op_Implicit(System.Int64)~Simplesoft.NonPositiveInteger">
+            <summary>
+            Converts an <see cref="T:System.Int64"/> to a <see cref="T:Simplesoft.NonPositiveInteger"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.Int64"/>.</param>
+            <exception cref="T:Simplesoft.NonPositiveInteger.ImplicitOperatorExceptions.ValueInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.NonPositiveInteger.op_Implicit(Simplesoft.NonPositiveInteger)~System.Int64">
+            <summary>
+            Converts a <see cref="T:Simplesoft.NonPositiveInteger"/> to an <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonPositiveInteger"/>.</param>
+        </member>
+        <member name="M:Simplesoft.NonPositiveInteger.op_UnaryNegation(Simplesoft.NonPositiveInteger)">
+            <summary>
+            Inverts a <see cref="T:Simplesoft.NonPositiveInteger"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonPositiveInteger"/>.</param>
+            <returns>An additive inverse of <paramref name="value"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval">
+            <summary>
+            Represents an interval defined by two integers whose values are non-positive.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.ConstructorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonPositiveIntegerInterval"/> constructors.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.ConstructorExceptions.MaxInvalidException">
+            <summary>
+            Represents the exception that is thrown when the max argument value is greater than 0.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.ConstructorExceptions.MinMaxInvalidException">
+            <summary>
+            Represents the exception that is thrown when the min argument value is less than the max argument value.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.ImplicitOperatorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonPositiveIntegerInterval"/> implicit operators.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.ImplicitOperatorExceptions.MaxInvalidException">
+            <summary>
+            Represents the exception that is thrown when the right bound of the interval argument value is greater than 0.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.MinusOperatorExceptions">
+            <summary>
+            Provides exceptions for <see cref="T:Simplesoft.NonPositiveIntegerInterval"/> minus operator.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.NonPositiveIntegerInterval.MinusOperatorExceptions.MinInvalidException">
+            <summary>
+            Represents the exception that is thrown when the left bound of the interval argument value equals to <see cref="F:Simplesoft.Integer.MinValue"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.NonPositiveIntegerInterval.op_Implicit(Simplesoft.IntegerInterval)~Simplesoft.NonPositiveIntegerInterval">
+            <summary>
+            Converts an <see cref="T:Simplesoft.IntegerInterval"/> to a <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <exception cref="T:Simplesoft.NonPositiveIntegerInterval.ImplicitOperatorExceptions.MaxInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.NonPositiveIntegerInterval.op_Implicit(Simplesoft.NonPositiveIntegerInterval)~Simplesoft.IntegerInterval">
+            <summary>
+            Converts a <see cref="T:Simplesoft.NonPositiveIntegerInterval"/> to an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.</param>
+        </member>
+        <member name="M:Simplesoft.NonPositiveIntegerInterval.op_UnaryNegation(Simplesoft.NonPositiveIntegerInterval)">
+            <summary>
+            Inverts a <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.
+            </summary>
+            <param name="value">The <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.</param>
+            <returns>A symmetric <see cref="T:Simplesoft.NonNegativeIntegerInterval"/> of <paramref name="value"/>.</returns>
+            <exception cref="T:Simplesoft.NonPositiveIntegerInterval.MinusOperatorExceptions.MinInvalidException"/>
+        </member>
+        <member name="M:Simplesoft.NonPositiveIntegerInterval.#ctor(Simplesoft.Integer,Simplesoft.Integer)">
+            <summary>
+            Initializes the <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>
+            </summary>
+            <param name="min">The left bound of the <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.</param>
+            <param name="max">The right bound of the <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.</param>
+            <exception cref="T:Simplesoft.NonPositiveIntegerInterval.ConstructorExceptions.MaxInvalidException"/>
+            <exception cref="T:Simplesoft.NonPositiveIntegerInterval.ConstructorExceptions.MinMaxInvalidException"/>
+        </member>
+        <member name="P:Simplesoft.NonPositiveIntegerInterval.Min">
+            <summary>
+            Gets the left bound of the <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.NonPositiveIntegerInterval.Max">
+            <summary>
+            Gets the right bound of the <see cref="T:Simplesoft.NonPositiveIntegerInterval"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

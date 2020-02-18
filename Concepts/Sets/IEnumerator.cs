@@ -3,7 +3,7 @@
 namespace Simplesoft.Concepts.Sets
 {
 	/// <summary>
-	/// Represents an enumerator of elements.
+	/// Represents an enumerator of elements of an <see cref="ISequence{T}"/>.
 	/// </summary>
 	/// <typeparam name="T">The type of the elements.</typeparam>
 	public interface IEnumerator<out T> : IDisposable
@@ -24,14 +24,14 @@ namespace Simplesoft.Concepts.Sets
 				public NotStartedException() { }
 			}
 			/// <summary>
-			/// Represents the exception that is thrown when the current element of an <see cref="IEnumerator{T}"/> is accessed when the <see cref="IEnumerator{T}"/> is exhausted.
+			/// Represents the exception that is thrown when the current element of an <see cref="IEnumerator{T}"/> is accessed when the <see cref="IEnumerator{T}"/> is finished.
 			/// </summary>
-			public sealed class ExhaustedException : Exception
+			public sealed class FinishedException : Exception
 			{
 				/// <summary>
-				/// Initializes the <see cref="ExhaustedException"/>.
+				/// Initializes the <see cref="FinishedException"/>.
 				/// </summary>
-				public ExhaustedException() { }
+				public FinishedException() { }
 			}
 		}
 
@@ -39,13 +39,21 @@ namespace Simplesoft.Concepts.Sets
 		/// Gets the current element of the <see cref="IEnumerator{T}"/>.
 		/// </summary>
 		/// <exception cref="CurrentPropertyGetAccessorExceptions.NotStartedException"/>
-		/// <exception cref="CurrentPropertyGetAccessorExceptions.ExhaustedException"/>
+		/// <exception cref="CurrentPropertyGetAccessorExceptions.FinishedException"/>
 		T Current { get; }
+		/// <summary>
+		/// Gets the value that indicates whether the <see cref="IEnumerator{T}"/> is started.
+		/// </summary>
+		Boolean Started { get; }
+		/// <summary>
+		/// Gets the value that indicates whether the <see cref="IEnumerator{T}"/> is finished.
+		/// </summary>
+		Boolean Finished { get; }
 
 		/// <summary>
-		/// Sets the next element of the enumeration as current.
+		/// Sets the next element of the <see cref="ISequence{T}"/> as the current if the current element is not last.
 		/// </summary>
-		/// <returns><see langword="true"/> whether the <see cref="IEnumerator{T}"/> is not exhausted yet and the next element is set; otherwise, <see langword="false"/>.</returns>
+		/// <returns><see langword="true"/> whether the <see cref="IEnumerator{T}"/> is not finished yet and the next element is set as current; otherwise, <see langword="false"/>.</returns>
 		Boolean MoveNext();
 	}
 }

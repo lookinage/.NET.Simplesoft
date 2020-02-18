@@ -9,33 +9,6 @@ namespace Simplesoft.Concepts.Sets
 	public interface IOrder<T>
 	{
 		/// <summary>
-		/// References a method that responds to the <see cref="ClearEvent"/>.
-		/// </summary>
-		/// <param name="order">The <see cref="IOrder{T}"/> the <see cref="ClearEvent"/> has happened to.</param>
-		/// <param name="count">The number of removed elements.</param>
-		public delegate void ClearEventResponder
-		(
-			IOrder<T> order, 
-			Int64 count
-		);
-
-		/// <summary>
-		/// Provides exceptions for get accessor of Item property.
-		/// </summary>
-		static public class ItemPropertyGetAccessorExceptions
-		{
-			/// <summary>
-			/// Represents the exception that is thrown when the offset argument value is greater than or equal to the number of elements of the <see cref="IOrder{T}"/>.
-			/// </summary>
-			public sealed class OffsetInvalidException : Exception
-			{
-				/// <summary>
-				/// Initializes the <see cref="OffsetInvalidException"/>.
-				/// </summary>
-				public OffsetInvalidException() { }
-			}
-		}
-		/// <summary>
 		/// Represents an editor of an <see cref="IOrder{T}"/>.
 		/// </summary>
 		public interface IEditor
@@ -71,13 +44,41 @@ namespace Simplesoft.Concepts.Sets
 		}
 
 		/// <summary>
+		/// Provides exceptions for get accessor of Item property.
+		/// </summary>
+		static public class ItemPropertyGetAccessorExceptions
+		{
+			/// <summary>
+			/// Represents the exception that is thrown when the offset argument value is greater than or equal to the number of elements of the <see cref="IOrder{T}"/>.
+			/// </summary>
+			public sealed class OffsetInvalidException : Exception
+			{
+				/// <summary>
+				/// Initializes the <see cref="OffsetInvalidException"/>.
+				/// </summary>
+				public OffsetInvalidException() { }
+			}
+		}
+
+		/// <summary>
+		/// References a method that responds to the <see cref="ClearEvent"/>.
+		/// </summary>
+		/// <param name="order">The <see cref="IOrder{T}"/> the <see cref="ClearEvent"/> has happened to.</param>
+		/// <param name="count">The number of removed elements.</param>
+		public delegate void ClearEventResponder
+		(
+			IOrder<T> order,
+			Integer count
+		);
+
+		/// <summary>
 		/// Gets the <see cref="ISequence{T}"/> of the elements of the <see cref="IOrder{T}"/>.
 		/// </summary>
 		public ISequence<T> ElementSequence { get; }
 		/// <summary>
 		/// Gets the number of elements of the <see cref="IOrder{T}"/>.
 		/// </summary>
-		Int64 Count { get; }
+		Integer Count { get; }
 		/// <summary>
 		/// Gets an element at an offset from the beginning of the <see cref="IOrder{T}"/>.
 		/// </summary>

@@ -3,7 +3,7 @@
 namespace Simplesoft
 {
 	/// <summary>
-	/// Represents an interval defined by two 64-bit signed integers whose values are non-negative.
+	/// Represents an interval defined by two integers whose values are non-negative.
 	/// </summary>
 	public struct NonNegativeIntegerInterval
 	{
@@ -83,8 +83,8 @@ namespace Simplesoft
 			};
 		}
 
-		internal Int64 _min;
-		internal Int64 _max;
+		internal Integer _min;
+		internal Integer _max;
 
 		/// <summary>
 		/// Initializes the <see cref="NonNegativeIntegerInterval"/>
@@ -93,7 +93,7 @@ namespace Simplesoft
 		/// <param name="max">The right bound of the <see cref="NonNegativeIntegerInterval"/>.</param>
 		/// <exception cref="ConstructorExceptions.MinInvalidException"/>
 		/// <exception cref="ConstructorExceptions.MinMaxInvalidException"/>
-		public NonNegativeIntegerInterval(Int64 min, Int64 max)
+		public NonNegativeIntegerInterval(Integer min, Integer max)
 		{
 			if (min < 0x0)
 				throw new ConstructorExceptions.MinInvalidException();
@@ -106,10 +106,10 @@ namespace Simplesoft
 		/// <summary>
 		/// Gets the left bound of the <see cref="NonNegativeIntegerInterval"/>.
 		/// </summary>
-		public Int64 Min => _min;
+		public Integer Min => _min;
 		/// <summary>
 		/// Gets the right bound of the <see cref="NonNegativeIntegerInterval"/>.
 		/// </summary>
-		public Int64 Max => _max;
+		public Integer Max => _max;
 	}
 }

@@ -3,7 +3,7 @@
 namespace Simplesoft
 {
 	/// <summary>
-	/// Represents an interval defined by two 64-bit signed integers whose values are non-positive.
+	/// Represents an interval defined by two integers whose values are non-positive.
 	/// </summary>
 	public struct NonPositiveIntegerInterval
 	{
@@ -46,7 +46,7 @@ namespace Simplesoft
 		static public class MinusOperatorExceptions
 		{
 			/// <summary>
-			/// Represents the exception that is thrown when the left bound of the interval argument value equals to <see cref="Int64.MinValue"/>.
+			/// Represents the exception that is thrown when the left bound of the interval argument value equals to <see cref="Integer.MinValue"/>.
 			/// </summary>
 			public sealed class MinInvalidException : Exception
 			{
@@ -90,7 +90,7 @@ namespace Simplesoft
 		/// <exception cref="MinusOperatorExceptions.MinInvalidException"/>
 		static public NonNegativeIntegerInterval operator -(NonPositiveIntegerInterval value)
 		{
-			if (value._min == Int64.MinValue)
+			if (value._min == Integer.MinValue)
 				throw new MinusOperatorExceptions.MinInvalidException();
 			return new NonNegativeIntegerInterval
 			{
@@ -99,8 +99,8 @@ namespace Simplesoft
 			};
 		}
 
-		internal Int64 _min;
-		internal Int64 _max;
+		internal Integer _min;
+		internal Integer _max;
 
 		/// <summary>
 		/// Initializes the <see cref="NonPositiveIntegerInterval"/>
@@ -109,7 +109,7 @@ namespace Simplesoft
 		/// <param name="max">The right bound of the <see cref="NonPositiveIntegerInterval"/>.</param>
 		/// <exception cref="ConstructorExceptions.MaxInvalidException"/>
 		/// <exception cref="ConstructorExceptions.MinMaxInvalidException"/>
-		public NonPositiveIntegerInterval(Int64 min, Int64 max)
+		public NonPositiveIntegerInterval(Integer min, Integer max)
 		{
 			if (max > 0x0)
 				throw new ConstructorExceptions.MaxInvalidException();
@@ -122,10 +122,10 @@ namespace Simplesoft
 		/// <summary>
 		/// Gets the left bound of the <see cref="NonPositiveIntegerInterval"/>.
 		/// </summary>
-		public Int64 Min => _min;
+		public Integer Min => _min;
 		/// <summary>
 		/// Gets the right bound of the <see cref="NonPositiveIntegerInterval"/>.
 		/// </summary>
-		public Int64 Max => _max;
+		public Integer Max => _max;
 	}
 }

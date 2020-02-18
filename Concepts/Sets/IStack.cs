@@ -9,27 +9,6 @@ namespace Simplesoft.Concepts.Sets
 	public interface IStack<T> : IOrder<T>
 	{
 		/// <summary>
-		/// References a method that responds to the <see cref="RemoveEvent"/>.
-		/// </summary>
-		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="RemoveEvent"/> has happened to.</param>
-		/// <param name="element">The element that is removed from the <see cref="IStack{T}"/>.</param>
-		public delegate void RemoveEventResponder
-		(
-			IStack<T> stack, 
-			T element
-		);
-		/// <summary>
-		/// References a method that responds to the <see cref="AddEvent"/>.
-		/// </summary>
-		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="AddEvent"/> has happened to.</param>
-		/// <param name="element">The element that is added to the <see cref="IStack{T}"/>.</param>
-		public delegate void AddEventResponder
-		(
-			IStack<T> stack, 
-			T element
-		);
-
-		/// <summary>
 		/// Represents an editor of an <see cref="IStack{T}"/>.
 		/// </summary>
 		public new interface IEditor : IOrder<T>.IEditor
@@ -64,6 +43,27 @@ namespace Simplesoft.Concepts.Sets
 			/// <exception cref="AddMethodExceptions.OverflowedException"/>
 			void Add(T element);
 		}
+
+		/// <summary>
+		/// References a method that responds to the <see cref="RemoveEvent"/>.
+		/// </summary>
+		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="RemoveEvent"/> has happened to.</param>
+		/// <param name="element">The element that is removed from the <see cref="IStack{T}"/>.</param>
+		public delegate void RemoveEventResponder
+		(
+			IStack<T> stack,
+			T element
+		);
+		/// <summary>
+		/// References a method that responds to the <see cref="AddEvent"/>.
+		/// </summary>
+		/// <param name="stack">The <see cref="IStack{T}"/> the <see cref="AddEvent"/> has happened to.</param>
+		/// <param name="element">The element that is added to the <see cref="IStack{T}"/>.</param>
+		public delegate void AddEventResponder
+		(
+			IStack<T> stack,
+			T element
+		);
 
 		/// <summary>
 		/// Occurs when an element is removed from the <see cref="IStack{T}"/>.
