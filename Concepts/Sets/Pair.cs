@@ -17,7 +17,7 @@
 		public TSecond Second;
 
 		/// <summary>
-		/// Initializes the <see cref="Pair{TInput, TOutput}"/>.
+		/// Initializes the <see cref="Pair{TFirst, TSecond}"/>.
 		/// </summary>
 		/// <param name="first">The first element.</param>
 		/// <param name="second">The second element.</param>

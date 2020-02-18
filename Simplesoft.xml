@@ -86,6 +86,146 @@
             </summary>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IEnumerator`1"/> is not finished yet and the next element is set as current; otherwise, <see langword="false"/>.</returns>
         </member>
+        <member name="T:Simplesoft.Concepts.Sets.IIntegerPairSubset">
+            <summary>
+            Represents an <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> of integers.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IIntegerPairSubset.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerPairSubset.AscendingByFirstSequence">
+            <summary>
+            Gets an ascending by first element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerPairSubset.DescendingByFirstSequence">
+            <summary>
+            Gets a descending by first element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerPairSubset.AscendingBySecondSequence">
+            <summary>
+            Gets an ascending by second element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerPairSubset.DescendingBySecondSequence">
+            <summary>
+            Gets a descending by second element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.GetAscendingByFirstSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending by first element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.GetDescendingByFirstSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending by first element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.GetAscendingBySecondSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending by second element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.GetDescendingBySecondSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending by second element <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotLessThanByFirst(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is greater than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotGreaterThanByFirst(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> first of which is less than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotLessThanBySecond(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> second of which is greater than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerPairSubset.TryGetNotGreaterThanBySecond(Simplesoft.Integer,Simplesoft.Concepts.Sets.Pair{Simplesoft.Integer,Simplesoft.Integer}@)">
+            <summary>
+            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/> second of which is less than or equal to a threshold integer if the pair exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IIntegerSubset">
+            <summary>
+            Represents an <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> of integers.
+            </summary>
+        </member>
+        <member name="T:Simplesoft.Concepts.Sets.IIntegerSubset.IEditor">
+            <summary>
+            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IIntegerPairSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerSubset.AscendingSequence">
+            <summary>
+            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/>.
+            </summary>
+        </member>
+        <member name="P:Simplesoft.Concepts.Sets.IIntegerSubset.DescendingSequence">
+            <summary>
+            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/>.
+            </summary>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.GetAscendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.GetDescendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
+            <summary>
+            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
+            </summary>
+            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
+            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> within <paramref name="interval"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.TryGetNotLessThan(Simplesoft.Integer,Simplesoft.Integer@)">
+            <summary>
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is greater than or equal to a threshold integer if the element exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="element">The element if exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Simplesoft.Concepts.Sets.IIntegerSubset.TryGetNotGreaterThan(Simplesoft.Integer,Simplesoft.Integer@)">
+            <summary>
+            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IIntegerSubset"/> that is less than or equal to a threshold integer if the element exists.
+            </summary>
+            <param name="threshold">The threshold integer.</param>
+            <param name="element">The element if exists; otherwise, the default value.</param>
+            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="T:Simplesoft.Concepts.Sets.IOrder`1">
             <summary>
             Represents an order of elements of a set.
@@ -172,8 +312,8 @@
             <summary>
             Represents a subset of <see cref="T:Simplesoft.Concepts.Sets.Pair`2"/> instances.
             </summary>
-            <typeparam name="TFirst">The type of elements of the first set.</typeparam>
-            <typeparam name="TSecond">The type of elements of the second set.</typeparam>
+            <typeparam name="TFirst">The type of the first element.</typeparam>
+            <typeparam name="TSecond">The type of the second element.</typeparam>
         </member>
         <member name="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor">
             <summary>
@@ -212,19 +352,19 @@
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryRemoveByFirst(`0,`1@,Simplesoft.Integer)">
             <summary>
-            Removes the first pair consisting of an element of the first set from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Removes the first pair consisting of a first element from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
-            <param name="first">The element of the first set.</param>
-            <param name="second">The element of the second set if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="first">The first element.</param>
+            <param name="second">The second element if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryRemoveBySecond(`1,`0@,Simplesoft.Integer)">
             <summary>
-            Removes the first pair consisting of an element of the second set from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Removes the first pair consisting of a second element from the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.RemoveEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
             <param name="second">The element of the second.</param>
-            <param name="first">The element of the first set if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="first">The first element if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
@@ -232,8 +372,8 @@
             <summary>
             Adds a pair to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> does not contain a pair consisting of the element of the first set.
             </summary>
-            <param name="first">The element of the first set.</param>
-            <param name="second">The element of the second set.</param>
+            <param name="first">The first element.</param>
+            <param name="second">The second element.</param>
             <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the pair was added; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the pair was added to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>; otherwise, <see langword="false"/>.</returns>
             <exception cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException"/>
@@ -242,202 +382,57 @@
             <summary>
             Adds a pair to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>, causes the <see cref="E:Simplesoft.Concepts.Sets.ISubset`1.AddEvent"/> on the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> does not contain a pair consisting of the element of the second set.
             </summary>
-            <param name="first">The element of the first set.</param>
-            <param name="second">The element of the second set.</param>
+            <param name="first">The first element.</param>
+            <param name="second">The second element.</param>
             <param name="address">The address of the pair in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the pair was added; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the pair was added to the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/>; otherwise, <see langword="false"/>.</returns>
             <exception cref="T:Simplesoft.Concepts.Sets.IPairSubset`2.IEditor.TryAddByFirstMethodExceptions.OverflowedException"/>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetAddressByFirst(`0,Simplesoft.Integer@)">
             <summary>
-            Gets the address of the first pair consisting of an element of the first set in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Gets the address of the first pair consisting of a first element in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
-            <param name="first">The element of the first set.</param>
+            <param name="first">The first element.</param>
             <param name="address">The address of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetAddressBySecond(`1,Simplesoft.Integer@)">
             <summary>
-            Gets the address of the first pair consisting of an element of the second set in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Gets the address of the first pair consisting of a second element in the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
-            <param name="second">The element of the second set.</param>
+            <param name="second">The second element.</param>
             <param name="address">The address of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetSecondByFirst(`0,`1@)">
             <summary>
-            Gets the element of the second set of the first pair consisting of an element of the first set of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Gets second element of the first pair consisting of a first element of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
-            <param name="first">The element of the first set.</param>
-            <param name="second">The element of the second set of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="first">The first element.</param>
+            <param name="second">The second element of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetFirstBySecond(`1,`0@)">
             <summary>
-            Gets the element of the first set of the first pair consisting of an element of the second set of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
+            Gets first element of the first pair consisting of a second element of the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair.
             </summary>
-            <param name="second">The element of the second set.</param>
-            <param name="first">The element of the first set of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
+            <param name="second">The second element.</param>
+            <param name="first">The first element of the pair if the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, the default value.</param>
             <returns><see langword="true"/> whether the <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> contains the pair; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetFirstsByFirst(`0)">
             <summary>
-            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the second set paired with an element of the first set.
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of second elements paired with a first element.
             </summary>
-            <param name="first">The element of the first set.</param>
+            <param name="first">The first element.</param>
             <returns>The <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.</returns>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.IPairSubset`2.TryGetSecondsBySecond(`1)">
             <summary>
-            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the first set paired with an element of the second set.
+            Gets an <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of first elements paired with a second element.
             </summary>
-            <param name="second">The element of the second set.</param>
+            <param name="second">The second element.</param>
             <returns>The <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/>.</returns>
-        </member>
-        <member name="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset">
-            <summary>
-            Represents an <see cref="T:Simplesoft.Concepts.Sets.IPairSubset`2"/> where the first set and the second set are the sets of integers.
-            </summary>
-        </member>
-        <member name="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset.IEditor">
-            <summary>
-            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.AscendingByInputsSequence">
-            <summary>
-            Gets an ascending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.DescendingByInputsSequence">
-            <summary>
-            Gets a descending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.AscendingByOutputsSequence">
-            <summary>
-            Gets an ascending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberPairSubset.DescendingByOutputsSequence">
-            <summary>
-            Gets a descending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetAscendingByInputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets an ascending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetDescendingByInputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets a descending by firsts <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetAscendingByOutputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets an ascending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.GetDescendingByOutputsSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets a descending by seconds <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotLessThanByInputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
-            <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> first of which is greater than or equal to a threshold integer if the pair exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
-            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotGreaterThanByInputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
-            <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> first of which is less than or equal to a threshold integer if the pair exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
-            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotLessThanByOutputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
-            <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> second of which is greater than or equal to a threshold integer if the pair exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
-            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberPairSubset.TryGetNotGreaterThanByOutputs(Simplesoft.Integer,Simplesoft.Integer@,Simplesoft.Integer@)">
-            <summary>
-            Gets a pairs of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/> second of which is less than or equal to a threshold integer if the pair exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="first">The first of the pair if the pair exists; otherwise, the default value.</param>
-            <param name="second">The second of the pair if the pair exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the pair exists; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1">
-            <summary>
-            Represents an <see cref="T:Simplesoft.Concepts.Sets.ISubset`1"/> of real numbers.
-            </summary>
-            <typeparam name="TNumber">The type that represents real numbers.</typeparam>
-        </member>
-        <member name="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1.IEditor">
-            <summary>
-            Represents an editor of an <see cref="T:Simplesoft.Concepts.Sets.IRealNumberPairSubset"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberSubset`1.AscendingSequence">
-            <summary>
-            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/>.
-            </summary>
-        </member>
-        <member name="P:Simplesoft.Concepts.Sets.IRealNumberSubset`1.DescendingSequence">
-            <summary>
-            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/>.
-            </summary>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.GetAscendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets an ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>An ascending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.GetDescendingSequenceWithinInterval(Simplesoft.IntegerInterval)">
-            <summary>
-            Gets a descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within an <see cref="T:Simplesoft.IntegerInterval"/>.
-            </summary>
-            <param name="interval">The <see cref="T:Simplesoft.IntegerInterval"/>.</param>
-            <returns>A descending <see cref="T:Simplesoft.Concepts.Sets.ISequence`1"/> of elements of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> within <paramref name="interval"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.TryGetNotLessThan(Simplesoft.Integer,Simplesoft.Integer@)">
-            <summary>
-            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> that is greater than or equal to a threshold integer if the element exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="element">The element if exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:Simplesoft.Concepts.Sets.IRealNumberSubset`1.TryGetNotGreaterThan(Simplesoft.Integer,Simplesoft.Integer@)">
-            <summary>
-            Gets an element of the <see cref="T:Simplesoft.Concepts.Sets.IRealNumberSubset`1"/> that is less than or equal to a threshold integer if the element exists.
-            </summary>
-            <param name="threshold">The threshold integer.</param>
-            <param name="element">The element if exists; otherwise, the default value.</param>
-            <returns><see langword="true"/> if the element exists; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="T:Simplesoft.Concepts.Sets.IRing`1">
             <summary>
@@ -754,27 +749,27 @@
         </member>
         <member name="T:Simplesoft.Concepts.Sets.Pair`2">
             <summary>
-            Represents a relation between two elements of two different sets.
+            Represents a relation between two elements.
             </summary>
-            <typeparam name="TFirst">The type of elements of the first set.</typeparam>
-            <typeparam name="TSecond">The type of elements of the second set.</typeparam>
+            <typeparam name="TFirst">The type of the first element.</typeparam>
+            <typeparam name="TSecond">The type of the second element.</typeparam>
         </member>
         <member name="F:Simplesoft.Concepts.Sets.Pair`2.First">
             <summary>
-            The element of the first set.
+            The first element.
             </summary>
         </member>
         <member name="F:Simplesoft.Concepts.Sets.Pair`2.Second">
             <summary>
-            The element of the second set.
+            The second element.
             </summary>
         </member>
         <member name="M:Simplesoft.Concepts.Sets.Pair`2.#ctor(`0,`1)">
             <summary>
             Initializes the <see cref="T:Simplesoft.Concepts.Sets.Pair`2"/>.
             </summary>
-            <param name="first">The element of the first set.</param>
-            <param name="second">The element of the second set.</param>
+            <param name="first">The first element.</param>
+            <param name="second">The second element.</param>
         </member>
         <member name="T:Simplesoft.Integer">
             <summary>
