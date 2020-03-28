@@ -48,30 +48,56 @@ namespace Simplesoft.Concepts.Sets
 			}
 
 			/// <summary>
-			/// Removes the first pair consisting of a first element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+			/// Removes the first pair consisting of a first element and a second element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 			/// </summary>
 			/// <param name="first">The first element.</param>
-			/// <param name="second">The second element if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+			/// <param name="second">The second element.</param>
+			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
+			Boolean TryRemoveByFirst
+			(
+				TFirst first,
+				TSecond second,
+				out Integer address
+			);
+			/// <summary>
+			/// Removes the first pair consisting of a second element and a second element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
+			/// </summary>
+			/// <param name="second">The second element.</param>
+			/// <param name="first">The first element.</param>
+			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/>if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
+			Boolean TryRemoveBySecond
+			(
+				TSecond second,
+				TFirst first,
+				out Integer address
+			);
+			/// <summary>
+			/// Removes the first pair consisting of a first element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
+			/// </summary>
+			/// <param name="first">The first element.</param>
+			/// <param name="second">The second element if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 			Boolean TryRemoveByFirst
 			(
 				TFirst first,
 				out TSecond second,
-				Integer address
+				out Integer address
 			);
 			/// <summary>
-			/// Removes the first pair consisting of a second element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+			/// Removes the first pair consisting of a second element from the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.RemoveEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 			/// </summary>
-			/// <param name="second">The element of the second.</param>
-			/// <param name="first">The first element if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+			/// <param name="second">The second element.</param>
+			/// <param name="first">The first element if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <param name="address">The address of the pair in the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+			/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 			Boolean TryRemoveBySecond
 			(
 				TSecond second,
 				out TFirst first,
-				Integer address
+				out Integer address
 			);
 			/// <summary>
 			/// Adds a pair to the <see cref="IPairSubset{TFirst, TSecond}"/>, causes the <see cref="ISubset{T}.AddEvent"/> on the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> does not contain a pair consisting of the element of the first set.
@@ -104,44 +130,44 @@ namespace Simplesoft.Concepts.Sets
 		}
 
 		/// <summary>
-		/// Gets the address of the first pair consisting of a first element in the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+		/// Gets the address of the first pair consisting of a first element in the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 		/// </summary>
 		/// <param name="first">The first element.</param>
-		/// <param name="address">The address of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+		/// <param name="address">The address of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetAddressByFirst
 		(
 			TFirst first,
 			out Integer address
 		);
 		/// <summary>
-		/// Gets the address of the first pair consisting of a second element in the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+		/// Gets the address of the first pair consisting of a second element in the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 		/// </summary>
 		/// <param name="second">The second element.</param>
-		/// <param name="address">The address of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+		/// <param name="address">The address of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetAddressBySecond
 		(
 			TSecond second,
 			out Integer address
 		);
 		/// <summary>
-		/// Gets second element of the first pair consisting of a first element of the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+		/// Gets second element of the first pair consisting of a first element of the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 		/// </summary>
 		/// <param name="first">The first element.</param>
-		/// <param name="second">The second element of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+		/// <param name="second">The second element of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetSecondByFirst
 		(
 			TFirst first,
 			out TSecond second
 		);
 		/// <summary>
-		/// Gets first element of the first pair consisting of a second element of the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair.
+		/// Gets first element of the first pair consisting of a second element of the <see cref="IPairSubset{TFirst, TSecond}"/> if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair.
 		/// </summary>
 		/// <param name="second">The second element.</param>
-		/// <param name="first">The first element of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, the default value.</param>
-		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains the pair; otherwise, <see langword="false"/>.</returns>
+		/// <param name="first">The first element of the pair if the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, the default value.</param>
+		/// <returns><see langword="true"/> whether the <see cref="IPairSubset{TFirst, TSecond}"/> contains such a pair; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetFirstBySecond
 		(
 			TSecond second,

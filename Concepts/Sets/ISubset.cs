@@ -65,6 +65,18 @@ namespace Simplesoft.Concepts.Sets
 			/// <exception cref="TryAddMethodExceptions.OverflowedException"/>
 			Boolean TryAdd
 			(
+				T element,
+				out Integer address
+			);
+			/// <summary>
+			/// Adds an element to the <see cref="ISubset{T}"/>, causes the <see cref="AddEvent"/> on the <see cref="ISubset{T}"/>.
+			/// </summary>
+			/// <param name="element">The element.</param>
+			/// <param name="address">The address of <paramref name="element"/> in the <see cref="ISubset{T}"/> if <paramref name="element"/> is added to the <see cref="ISubset{T}"/>; otherwise, the default value.</param>
+			/// <returns><see langword="true"/> whether <paramref name="element"/> was added to the <see cref="ISubset{T}"/>; otherwise, <see langword="false"/>.</returns>
+			/// <exception cref="TryAddMethodExceptions.OverflowedException"/>
+			Integer Add
+			(
 				T element, 
 				out Integer address
 			);

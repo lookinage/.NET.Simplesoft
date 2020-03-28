@@ -73,15 +73,24 @@ namespace Simplesoft.Concepts.Sets
 		}
 
 		/// <summary>
+		/// Represents a collection of parameters for <see cref="RemoveBackEventResponder"/> delegate.
+		/// </summary>
+		public readonly struct RemoveBackEventResponderArguments
+		{
+			/// <summary>
+			/// The <see cref="IRing{T}"/> the <see cref="RemoveBackEvent"/> has happened to.
+			/// </summary>
+			public readonly IRing<T> Ring;
+			/// <summary>
+			/// The element that is removed from the <see cref="IRing{T}"/>.
+			/// </summary>
+			public readonly T Element;
+		}
+
+		/// <summary>
 		/// References a method that responds to the <see cref="RemoveBackEvent"/>.
 		/// </summary>
-		/// <param name="ring">The <see cref="IRing{T}"/> the <see cref="RemoveBackEvent"/> has happened to.</param>
-		/// <param name="element">The element that is removed from the <see cref="IRing{T}"/>.</param>
-		public delegate void RemoveBackEventResponder
-		(
-			IRing<T> ring,
-			T element
-		);
+		public delegate void RemoveBackEventResponder(RemoveBackEventResponderArguments arguments);
 		/// <summary>
 		/// References a method that responds to the <see cref="RemoveFrontEvent"/>.
 		/// </summary>

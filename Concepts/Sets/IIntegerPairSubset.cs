@@ -57,7 +57,7 @@ namespace Simplesoft.Concepts.Sets
 		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> first of which is greater than or equal to a threshold integer if such a pair exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+		/// <param name="pair">The pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotLessThanByFirst
 		(
@@ -68,7 +68,7 @@ namespace Simplesoft.Concepts.Sets
 		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> first of which is less than or equal to a threshold integer if such a pair exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+		/// <param name="pair">The pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotGreaterThanByFirst
 		(
@@ -79,7 +79,7 @@ namespace Simplesoft.Concepts.Sets
 		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> second of which is greater than or equal to a threshold integer if such a pair exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+		/// <param name="pair">The pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotLessThanBySecond
 		(
@@ -87,10 +87,10 @@ namespace Simplesoft.Concepts.Sets
 			out Pair<Integer, Integer> pair
 		);
 		/// <summary>
-		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> second of which is less than or equal to a threshold integer if the pair exists.
+		/// Gets a pairs of the <see cref="IIntegerPairSubset"/> second of which is less than or equal to a threshold integer if such a pair exists.
 		/// </summary>
 		/// <param name="threshold">The threshold integer.</param>
-		/// <param name="pair">The the pair if such a pair exists; otherwise, the default value.</param>
+		/// <param name="pair">The pair if such a pair exists; otherwise, the default value.</param>
 		/// <returns><see langword="true"/> if such a pair exists; otherwise, <see langword="false"/>.</returns>
 		Boolean TryGetNotGreaterThanBySecond
 		(
